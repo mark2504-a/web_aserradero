@@ -721,7 +721,8 @@
                         <h2 class="contact-title" id="contacto">Contactanos</h2>
                     </div>
                     <div class="col-lg-8">
-                       <form class="form-contact contact_form" action="mailto:ne7366010@gmail.com" method="POST" id="contactForm">
+                       <form class="form-contact contact_form" action="https://formspree.io/f/mrpgebjz" method="POST" id="contactForm">
+                            <input type="hidden" name="_subject" value="Nuevo mensaje de contacto - Aserradero La Ceiba De Oro">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
@@ -747,7 +748,6 @@
                             <div class="form-group mt-3">
                                 <button type="submit" class="button button-contactForm boxed-btn">Enviar</button>
                             </div>
-                            <div id="formMessage" class="form-message mt-3" style="display:none;"></div>
                         </form>
                     </div>
                     <div class="col-lg-3 offset-lg-1">
@@ -841,16 +841,70 @@
         <script src="./assets/js/jquery.counterup.min.js"></script>
 
         <!-- contact js -->
-        <script src="./assets/js/contact.js"></script>
-        <script src="./assets/js/jquery.form.js"></script>
         <script src="./assets/js/jquery.validate.min.js"></script>
-        <script src="./assets/js/mail-script.js"></script>
-        <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
-        
+
 		<!-- Jquery Plugins, main Jquery -->	
         <script src="./assets/js/plugins.js"></script>
         <script src="./assets/js/main.js"></script>
         
         <a id="whatsappFloat" href="https://wa.me/50360602008" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="32" height="32" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 5L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.05 2h-.01zm0 18.15h-.01c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.184 8.184 0 01-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.183 8.183 0 012.41 5.83c0 4.54-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.15.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.36-.77-1.86-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.47-.01-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.57.12.17 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg></a>
+
+        <script>
+            (function () {
+                const contactForm = document.getElementById('contactForm');
+                if (!contactForm) return;
+
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const submitBtn = contactForm.querySelector('button[type="submit"]');
+                    const originalBtnText = submitBtn.innerHTML;
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = 'Enviando...';
+
+                    const formData = new FormData(contactForm);
+
+                    fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    })
+                    .then(function (response) {
+                        if (response.ok) {
+                            Swal.fire({
+                                icon: 'success',
+                                title: '¡Mensaje enviado!',
+                                text: 'Gracias por contactarnos, te responderemos lo antes posible.',
+                                confirmButtonColor: '#c69a4e'
+                            });
+                            contactForm.reset();
+                        } else {
+                            return response.json().then(function (data) {
+                                const errorMsg = (data && data.errors)
+                                    ? data.errors.map(function (err) { return err.message; }).join(', ')
+                                    : 'Ocurrió un problema al enviar tu mensaje.';
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'No se pudo enviar',
+                                    text: errorMsg,
+                                    confirmButtonColor: '#c69a4e'
+                                });
+                            });
+                        }
+                    })
+                    .catch(function () {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error de conexión',
+                            text: 'No se pudo contactar al servidor. Intenta de nuevo.',
+                            confirmButtonColor: '#c69a4e'
+                        });
+                    })
+                    .finally(function () {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalBtnText;
+                    });
+                });
+            })();
+        </script>
 </body>
 </html>
