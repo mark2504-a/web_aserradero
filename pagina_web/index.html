@@ -23,12 +23,17 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
             <!-- Google Fonts: Poppins (botón "Nuestros Servicios") -->
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap">
             <!-- Incluir SweetAlert2 CSS -->
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
             <!-- Incluir SweetAlert2 JS -->
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 
             <style>
+              .hero__caption h1,
+              .hero__caption .stock-text h2 {
+                font-family: 'Playfair Display', serif !important;
+              }
               @media (max-width: 767px) {
                 .single-slider.slider-height {
                   min-height: 620px !important;
@@ -42,12 +47,19 @@
                   font-size: 0.95rem !important;
                   line-height: 1.4 !important;
                   display: block !important;
+                  font-family: 'Poppins', sans-serif !important;
+                  font-weight: 400 !important;
+                  letter-spacing: 1px !important;
+                  text-transform: uppercase !important;
                 }
                 .hero__caption h1 {
                   font-size: 2.4rem !important;
                   line-height: 1.05 !important;
                   margin-top: 8px !important;
                   margin-bottom: 0px !important;
+                  font-family: 'Playfair Display', serif !important;
+                  font-weight: 700 !important;
+                  letter-spacing: 0.5px !important;
                 }
                 .hero__caption .stock-text {
                   position: relative !important;
@@ -59,6 +71,8 @@
                   font-size: 1.8rem !important;
                   line-height: 1.1 !important;
                   margin: 0 !important;
+                  font-family: 'Playfair Display', serif !important;
+                  font-weight: 600 !important;
                 }
                 .hero__caption .hero-text2 {
                   margin-top: 20px !important;
@@ -73,6 +87,7 @@
                   display: inline-block !important;
                   border-radius: 50px !important;
                   box-shadow: 0 0 20px rgba(255, 193, 7, 0.6), 0 0 40px rgba(255, 193, 7, 0.3) !important;
+                  font-family: 'Poppins', sans-serif !important;
                 }
               }
               @media (max-width: 480px) {
