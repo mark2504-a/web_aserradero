@@ -2057,8 +2057,13 @@ hr {
 	padding: 37px 62px
 }
 
-@media (max-width: 480px) {
-	#sobre .support-img-cap { max-width: 100% }
+@media (max-width: 767px) {
+	#sobre .support-img-cap {
+		max-width: 85%;
+		width: auto;
+		left: 0;
+		box-sizing: border-box;
+	}
 }
 
 /* ---- Count area ---- */
