@@ -34,11 +34,20 @@
               .hero__caption h1,
               .hero__caption .stock-text h2 {
                 font-family: 'Roboto', sans-serif !important;
+                max-width: 100% !important;
+                overflow-wrap: break-word !important;
+                word-break: keep-all !important;
+                white-space: normal !important;
               }
               .hero__caption .hero-text1 span {
                 font-family: 'Montserrat', sans-serif !important;
                 letter-spacing: 1px !important;
                 text-transform: uppercase !important;
+              }
+              .hero__caption {
+                max-width: 100% !important;
+                padding-right: 10px !important;
+                box-sizing: border-box !important;
               }
 
               @media (max-width: 767px) {
@@ -51,25 +60,26 @@
                   overflow: visible !important;
                 }
                 .hero__caption .hero-text1 span {
-                  font-size: 1.2rem !important;
+                  font-size: 1.14rem !important;
                   line-height: 1.4 !important;
                   display: block !important;
                 }
                 .hero__caption h1 {
-                  font-size: 3.24rem !important;
+                  font-size: 3.08rem !important;
                   font-weight: 700 !important;
                   line-height: 1.05 !important;
                   margin-top: 10px !important;
                   margin-bottom: 0px !important;
+                  letter-spacing: -1px !important;
                 }
                 .hero__caption .stock-text {
                   position: relative !important;
                   margin-top: -6px !important;
                   margin-bottom: 25px !important;
-                  min-height: 50px !important;
+                  min-height: 48px !important;
                 }
                 .hero__caption .stock-text h2 {
-                  font-size: 2.4rem !important;
+                  font-size: 2.28rem !important;
                   font-weight: 600 !important;
                   line-height: 1.1 !important;
                   margin: 0 !important;
@@ -81,10 +91,12 @@
                 }
                 .hero__caption .hero-text2 span a {
                   font-family: 'Montserrat', sans-serif !important;
-                  font-size: 1.14rem !important;
+                  font-size: 0.97rem !important;
                   font-weight: 700 !important;
+                  font-style: normal !important;
+                  text-decoration: none !important;
                   letter-spacing: 0.5px !important;
-                  padding: 16px 36px !important;
+                  padding: 14px 32px !important;
                   display: inline-block !important;
                   border-radius: 50px !important;
                   box-shadow: 0 0 20px rgba(255, 193, 7, 0.6), 0 0 40px rgba(255, 193, 7, 0.3) !important;
@@ -95,17 +107,18 @@
                   min-height: 690px !important;
                 }
                 .hero__caption h1 {
-                  font-size: 2.76rem !important;
+                  font-size: 2.62rem !important;
+                  letter-spacing: -1px !important;
                 }
                 .hero__caption .stock-text h2 {
-                  font-size: 2.04rem !important;
+                  font-size: 1.94rem !important;
                 }
                 .hero__caption .stock-text {
-                  min-height: 44px !important;
+                  min-height: 42px !important;
                 }
                 .hero__caption .hero-text2 span a {
-                  padding: 14px 30px !important;
-                  font-size: 1.08rem !important;
+                  padding: 12px 26px !important;
+                  font-size: 0.92rem !important;
                 }
               }
             </style>
