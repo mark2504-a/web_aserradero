@@ -1582,7 +1582,8 @@ hr {
 	text-transform: uppercase;
 	color: #D9A429;
 	margin: 15px;
-	padding: 0
+	padding: 0;
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5)
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -1624,7 +1625,8 @@ hr {
 	line-height: 1;
 	text-transform: uppercase;
 	position: absolute;
-	color: #fff
+	color: #fff;
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5)
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -1648,7 +1650,7 @@ hr {
 
 .slider-area .hero__caption .stock-text h2:nth-child(2) {
 	color: #D9A429;
-	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes animate {
@@ -1673,6 +1675,7 @@ hr {
 	font-family: "Rubik", sans-serif;
 	font-weight: 400;
 	letter-spacing: 0.03em;
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 	display: block;
 	transform: translateX(4%);
 }
