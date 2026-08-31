@@ -2021,8 +2021,7 @@ hr {
 }
 
 #sobre .support-img-cap {
-	padding-left: 23px;
-	padding-right: 23px
+	padding: 37px 28px
 }
 
 @media (max-width: 480px) {
