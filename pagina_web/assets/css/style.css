@@ -2020,25 +2020,6 @@ hr {
 	letter-spacing: .5em
 }
 
-#sobre .support-img-cap {
-	width: 450px;
-	height: 265px;
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center
-}
-
-@media (max-width: 480px) {
-	#sobre .support-img-cap { max-width: 100% }
-}
-
-#sobre .support-img-cap span {
-	display: block;
-	text-align: center
-}
-
 /* ---- Count area ---- */
 .count-area {
 	position: relative;
