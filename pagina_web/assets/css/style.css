@@ -1660,6 +1660,10 @@ hr {
 	}
 }
 
+.slider-area .hero__caption .hero-text1 {
+	margin-bottom: 45px
+}
+
 .slider-area .hero__caption .hero-text1 span,
 .slider-area .hero__caption .hero-text1 a {
 	position: relative;
