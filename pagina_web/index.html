@@ -113,7 +113,7 @@
                   border-radius: 50px !important;
                   box-shadow: 0 0 20px rgba(255, 193, 7, 0.6), 0 0 40px rgba(255, 193, 7, 0.3) !important;
                 }
-                .container {
+                .single-slider .container {
                   display: flex !important;
                   justify-content: center !important;
                 }
@@ -156,6 +156,25 @@
                   padding-left: 10px !important;
                   padding-right: 10px !important;
                 }
+              }
+
+              #preloader-active {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100vw !important;
+                height: 100vh !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                z-index: 9999 !important;
+              }
+              #preloader-active .preloader {
+                width: 100% !important;
+                height: 100% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
               }
             </style>
    </head>
