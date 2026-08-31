@@ -2020,6 +2020,21 @@ hr {
 	letter-spacing: .5em
 }
 
+#sobre .support-img-cap {
+	padding: 53px 26px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	border-radius: 0
+}
+
+#sobre .support-img-cap span {
+	font-size: 55px
+}
+
+#sobre .support-img-cap p {
+	font-size: 14px
+}
+
 /* ---- Count area ---- */
 .count-area {
 	position: relative;
