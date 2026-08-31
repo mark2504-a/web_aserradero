@@ -1695,6 +1695,11 @@ hr {
 	padding: 11px 26px;
 	border-radius: 50px;
 	box-shadow: 0 4px 14px rgba(217, 164, 41, 0.5);
+	box-sizing: border-box;
+	max-width: 100%;
+	text-align: center;
+	white-space: normal;
+	overflow-wrap: break-word;
 	transition: background .3s ease-out 0s, color .3s ease-out 0s, transform .3s ease-out 0s, box-shadow .3s ease-out 0s;
 }
 
