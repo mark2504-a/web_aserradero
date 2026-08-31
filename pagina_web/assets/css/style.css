@@ -1970,25 +1970,25 @@ hr {
 	position: absolute;
 	bottom: 0px;
 	background: #1A140B;
-	padding: 59px 28px;
-	border-radius: 5px
+	padding: 41px 20px;
+	border-radius: 0
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
-	.support-company-area .support-wrapper .right-content .support-img-cap { padding: 27px 18px }
+	.support-company-area .support-wrapper .right-content .support-img-cap { padding: 19px 13px }
 }
 @media (max-width: 575px) {
-	.support-company-area .support-wrapper .right-content .support-img-cap { padding: 35px 0px }
+	.support-company-area .support-wrapper .right-content .support-img-cap { padding: 25px 0px }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-	.support-company-area .support-wrapper .right-content .support-img-cap { padding: 35px 18px }
+	.support-company-area .support-wrapper .right-content .support-img-cap { padding: 25px 13px }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-	.support-company-area .support-wrapper .right-content .support-img-cap { padding: 35px 18px }
+	.support-company-area .support-wrapper .right-content .support-img-cap { padding: 25px 13px }
 }
 
 .support-company-area .support-wrapper .right-content .support-img-cap span {
-	font-size: 60px;
+	font-size: 42px;
 	color: #D9A429;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -1997,23 +1997,23 @@ hr {
 }
 
 @media (max-width: 575px) {
-	.support-company-area .support-wrapper .right-content .support-img-cap span { padding: 6px 40px; font-size: 38px }
+	.support-company-area .support-wrapper .right-content .support-img-cap span { padding: 4px 28px; font-size: 27px }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
-	.support-company-area .support-wrapper .right-content .support-img-cap span { font-size: 35px }
+	.support-company-area .support-wrapper .right-content .support-img-cap span { font-size: 25px }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-	.support-company-area .support-wrapper .right-content .support-img-cap span { font-size: 35px }
+	.support-company-area .support-wrapper .right-content .support-img-cap span { font-size: 25px }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-	.support-company-area .support-wrapper .right-content .support-img-cap span { font-size: 35px }
+	.support-company-area .support-wrapper .right-content .support-img-cap span { font-size: 25px }
 }
 
 .support-company-area .support-wrapper .right-content .support-img-cap P {
 	color: #fff;
 	line-height: 1;
 	margin: 0;
-	font-size: 16px;
+	font-size: 11px;
 	text-transform: uppercase;
 	letter-spacing: .5em
 }
