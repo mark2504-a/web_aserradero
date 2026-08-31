@@ -30,21 +30,38 @@
 
             <style>
               @media (max-width: 767px) {
+                .single-slider.slider-height {
+                  min-height: 620px !important;
+                  padding-top: 40px !important;
+                  padding-bottom: 40px !important;
+                }
+                .hero__caption {
+                  overflow: visible !important;
+                }
                 .hero__caption .hero-text1 span {
                   font-size: 0.95rem !important;
                   line-height: 1.4 !important;
+                  display: block !important;
                 }
                 .hero__caption h1 {
                   font-size: 2.4rem !important;
                   line-height: 1.15 !important;
-                  margin-bottom: 10px !important;
+                  margin-top: 8px !important;
+                  margin-bottom: 8px !important;
+                }
+                .hero__caption .stock-text {
+                  position: relative !important;
+                  margin-bottom: 30px !important;
+                  min-height: 45px !important;
                 }
                 .hero__caption .stock-text h2 {
                   font-size: 1.8rem !important;
                   line-height: 1.2 !important;
                 }
                 .hero__caption .hero-text2 {
-                  margin-top: 24px !important;
+                  margin-top: 30px !important;
+                  position: relative !important;
+                  z-index: 2 !important;
                 }
                 .hero__caption .hero-text2 span a {
                   font-size: 0.85rem !important;
@@ -53,11 +70,17 @@
                 }
               }
               @media (max-width: 480px) {
+                .single-slider.slider-height {
+                  min-height: 650px !important;
+                }
                 .hero__caption h1 {
                   font-size: 2rem !important;
                 }
                 .hero__caption .stock-text h2 {
                   font-size: 1.5rem !important;
+                }
+                .hero__caption .stock-text {
+                  min-height: 40px !important;
                 }
               }
             </style>
