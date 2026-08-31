@@ -1976,9 +1976,6 @@ hr {
 	border: 1px solid rgba(255, 255, 255, 0.08)
 }
 
-/* PRUEBA VISUAL TEMPORAL — quitar después de confirmar */
-.support-img-cap { outline: 2px solid red !important; }
-
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
 	.support-company-area .support-wrapper .right-content .support-img-cap { padding: 19px 13px }
 }
@@ -2021,6 +2018,15 @@ hr {
 	font-size: 11px;
 	text-transform: uppercase;
 	letter-spacing: .5em
+}
+
+#sobre .support-img-cap {
+	padding-left: 23px;
+	padding-right: 23px
+}
+
+@media (max-width: 480px) {
+	#sobre .support-img-cap { max-width: 100% }
 }
 
 /* ---- Count area ---- */
