@@ -1971,7 +1971,9 @@ hr {
 	bottom: 0px;
 	background: #1A140B;
 	padding: 41px 20px;
-	border-radius: 0
+	border-radius: 0;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+	border: 1px solid rgba(255, 255, 255, 0.08)
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
