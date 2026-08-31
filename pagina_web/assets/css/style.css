@@ -1783,9 +1783,14 @@ hr {
 /* Overlay reforzado solo para el hero principal (fondo del portón amarillo,
    necesita más oscuro para que el título dorado siga siendo legible) */
 .slider-height.hero-overly::before {
-	background-image: -moz-linear-gradient(0deg, rgba(26, 20, 11, 0.85) 0%, rgba(26, 20, 11, 0.55) 100%);
-	background-image: -webkit-linear-gradient(0deg, rgba(26, 20, 11, 0.85) 0%, rgba(26, 20, 11, 0.55) 100%);
-	background-image: -ms-linear-gradient(0deg, rgba(26, 20, 11, 0.85) 0%, rgba(26, 20, 11, 0.55) 100%)
+	background-image: -moz-linear-gradient(0deg, rgba(26, 20, 11, 0.90) 0%, rgba(26, 20, 11, 0.68) 100%);
+	background-image: -webkit-linear-gradient(0deg, rgba(26, 20, 11, 0.90) 0%, rgba(26, 20, 11, 0.68) 100%);
+	background-image: -ms-linear-gradient(0deg, rgba(26, 20, 11, 0.90) 0%, rgba(26, 20, 11, 0.68) 100%)
+}
+
+.single-slider .container {
+	position: relative;
+	z-index: 2
 }
 
 /* ---- Services ---- */
