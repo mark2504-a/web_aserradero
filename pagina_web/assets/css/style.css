@@ -2020,6 +2020,18 @@ hr {
 	letter-spacing: .5em
 }
 
+#valores .support-img-cap {
+	padding: 39px 19px
+}
+
+#valores .support-img-cap span {
+	font-size: 40px
+}
+
+#valores .support-img-cap p {
+	font-size: 10px
+}
+
 #sobre .support-img-cap {
 	padding: 37px 62px
 }
