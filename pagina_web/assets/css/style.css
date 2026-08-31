@@ -1976,6 +1976,9 @@ hr {
 	border: 1px solid rgba(255, 255, 255, 0.08)
 }
 
+/* PRUEBA VISUAL TEMPORAL — quitar después de confirmar */
+.support-img-cap { outline: 2px solid red !important; }
+
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
 	.support-company-area .support-wrapper .right-content .support-img-cap { padding: 19px 13px }
 }
