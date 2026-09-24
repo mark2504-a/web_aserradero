@@ -1123,6 +1123,83 @@ hr {
 	}
 }
 
+/* ---- Formulario "Solicita tu cotización" ---- */
+.form-intro {
+	color: rgba(26, 20, 11, 0.75);
+	font-size: 17px;
+	line-height: 1.6;
+	max-width: 480px;
+	text-wrap: balance;
+	margin: 10px 0 25px 0;
+}
+
+.form-contact label {
+	display: block;
+	font-size: 15px;
+	font-weight: 600;
+	color: #231B10;
+	margin-bottom: 6px;
+}
+
+.form-contact .required-asterisk {
+	color: #D9A429;
+	margin-left: 2px;
+}
+
+.btn-cotizar-submit {
+	display: inline-block;
+	background: #D9A429;
+	color: #231B10;
+	font-family: "Montserrat", sans-serif;
+	font-size: 19px;
+	font-weight: 700;
+	padding: 14px 36px;
+	border: none;
+	border-radius: 50px;
+	box-shadow: 0 4px 14px rgba(217, 164, 41, 0.5);
+	cursor: pointer;
+	transition: background .3s ease-out 0s, color .3s ease-out 0s, transform .3s ease-out 0s, box-shadow .3s ease-out 0s;
+}
+
+.btn-cotizar-submit:hover {
+	background: #C6931F;
+	color: #231B10;
+	transform: scale(1.06);
+	box-shadow: 0 6px 20px rgba(217, 164, 41, 0.7);
+}
+
+.btn-cotizar-submit:disabled {
+	opacity: 0.7;
+	cursor: not-allowed;
+	transform: none;
+}
+
+@media (max-width: 575px) {
+	.btn-cotizar-submit {
+		width: 100%;
+	}
+}
+
+.form-feedback {
+	margin-top: 12px;
+	font-size: 15px;
+}
+
+.form-feedback.is-error {
+	color: #b02a37;
+}
+
+.form-success-message {
+	background: #FAF3E6;
+	border: 1px solid #D9A429;
+	border-radius: 8px;
+	padding: 30px;
+	color: #231B10;
+	font-size: 18px;
+	line-height: 1.5;
+	text-align: center;
+}
+
 /* ---- Valores list ---- */
 .valores-list {
 	list-style: none;
