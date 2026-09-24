@@ -1559,99 +1559,96 @@ hr {
 .slider-area { margin-top: -1px }
 
 .slider-area .hero__caption {
-	margin-left: 27px;
 	padding-top: 150px
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	.slider-area .hero__caption { padding-top: 70px }
 }
-@media only screen and (min-width: 576px) and (max-width: 767px) {
+@media (max-width: 767px) {
 	.slider-area .hero__caption { padding-top: 70px; padding-right: 20px }
 }
 @media (max-width: 575px) {
-	.slider-area .hero__caption { padding-top: 70px; padding-right: 20px }
+	.slider-area .hero__caption { padding-left: 20px }
+}
+
+/* Eyebrow: línea decorativa dorada + texto pequeño en mayúsculas */
+.slider-area .hero__caption .hero-text1 {
+	margin: 0 0 20px 0
+}
+
+.slider-area .hero__caption .hero-text1 span {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	position: static;
+	color: #D9A429;
+	font-family: 'Figtree', sans-serif;
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+	transform: none
+}
+
+.slider-area .hero__caption .hero-text1 span::before {
+	content: "";
+	width: 40px;
+	height: 2px;
+	flex: 0 0 auto;
+	background: #D9A429;
+}
+
+@media (max-width: 767px) {
+	.slider-area .hero__caption .hero-text1 span { font-size: 12px }
+	.slider-area .hero__caption .hero-text1 span::before { width: 30px }
+}
+
+/* Titular: h1 (blanco) + stock-text h2 (dorado) forman un solo bloque de 2 líneas */
+.slider-area .hero__caption h1,
+.slider-area .hero__caption .stock-text h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 58px;
+	font-weight: 700;
+	line-height: 1.1;
+	text-transform: uppercase;
+	margin: 0;
+	padding: 0;
+	max-width: 100%;
+	overflow-wrap: break-word;
+	word-break: keep-all;
+	white-space: normal;
+	text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4)
 }
 
 .slider-area .hero__caption h1 {
-	font-size: 52px;
-	font-weight: 600;
-	color: #ffffff;
-	font-family: 'Montserrat', sans-serif;
-	line-height: 1;
-	text-transform: uppercase;
-	color: #D9A429;
-	margin: 15px;
-	padding: 0;
-	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5)
+	color: #ffffff
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
-	.slider-area .hero__caption h1 { font-size: 46px }
+	.slider-area .hero__caption h1,
+	.slider-area .hero__caption .stock-text h2 { font-size: 48px }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-	.slider-area .hero__caption h1 { font-size: 34px }
+	.slider-area .hero__caption h1,
+	.slider-area .hero__caption .stock-text h2 { font-size: 38px }
 }
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-	.slider-area .hero__caption h1 { font-size: 1.9rem; line-height: 1.2 }
-}
-@media (max-width: 575px) {
-	.slider-area .hero__caption h1 { font-size: 1.6rem; line-height: 1.2 }
+@media (max-width: 767px) {
+	.slider-area .hero__caption h1,
+	.slider-area .hero__caption .stock-text h2 { font-size: 30px }
 }
 
 .slider-area .hero__caption .stock-text {
-	position: relative;
-	left: 119px;
-	top: -24px;
-	min-height: 40px
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-	.slider-area .hero__caption .stock-text { top: -14px; min-height: 56px }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-	.slider-area .hero__caption .stock-text { top: -9px; min-height: 46px }
-}
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-	.slider-area .hero__caption .stock-text { top: -9px; left: 40px }
-}
-@media (max-width: 575px) {
-	.slider-area .hero__caption .stock-text { top: 0; left: 0 }
+	margin: 0 0 20px 0
 }
 
 .slider-area .hero__caption .stock-text h2 {
-	font-size: 58px;
-	font-weight: 800;
-	margin: 0;
-	line-height: 1;
-	text-transform: uppercase;
-	position: absolute;
-	color: #fff;
-	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5)
+	color: #D9A429
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-	.slider-area .hero__caption .stock-text h2 { font-size: 66px }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-	.slider-area .hero__caption .stock-text h2 { font-size: 52px }
-}
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-	.slider-area .hero__caption .stock-text h2 { font-size: 2.2rem; line-height: 1.3 }
-}
-@media (max-width: 575px) {
-	.slider-area .hero__caption .stock-text h2 { font-size: 1.9rem; line-height: 1.3; margin-bottom: 25px }
-}
-
-.slider-area .hero__caption .stock-text h2:nth-child(1) {
-	color: transparent;
-	-webkit-text-stroke: 1px rgba(8, 6, 6, 0.5);
-	-webkit-text-fill-color: transparent
-}
-
-.slider-area .hero__caption .stock-text h2:nth-child(2) {
-	color: #D9A429;
-	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+.slider-area .hero__caption .stock-text h2:first-child {
+	display: none
 }
 
 @keyframes animate {
@@ -1661,24 +1658,6 @@ hr {
 	50% {
 		clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%)
 	}
-}
-
-.slider-area .hero__caption .hero-text1 {
-	margin-bottom: 45px
-}
-
-.slider-area .hero__caption .hero-text1 span,
-.slider-area .hero__caption .hero-text1 a {
-	position: relative;
-	color: #fff;
-	font-size: 30px;
-	text-transform: uppercase;
-	font-family: "Rubik", sans-serif;
-	font-weight: 400;
-	letter-spacing: 0.03em;
-	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-	display: block;
-	transform: translateX(4%);
 }
 
 .icon-title {
@@ -1718,50 +1697,27 @@ hr {
 	box-shadow: 0 6px 20px rgba(217, 164, 41, 0.7);
 }
 
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-	.slider-area .hero__caption .hero-text1 span,
-	.slider-area .hero__caption .hero-text1 a {
-		font-size: 1.1rem;
-		line-height: 1.3
-	}
-	.slider-area .hero__caption .hero-text2 a {
-		font-size: 19px;
-		padding: 11px 26px
-	}
+/* Subtítulo del hero */
+.slider-area .hero__caption .hero-subtitle {
+	color: rgba(255, 255, 255, 0.85);
+	font-family: 'Figtree', sans-serif;
+	font-size: 19px;
+	line-height: 1.6;
+	max-width: 520px;
+	text-wrap: balance;
+	margin: 0 0 36px 0;
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5)
 }
-@media (max-width: 575px) {
-	.slider-area .hero__caption .hero-text1 span,
-	.slider-area .hero__caption .hero-text1 a,
-	.slider-area .hero__caption .hero-text2 span,
-	.slider-area .hero__caption .hero-text2 a {
-		margin-bottom: 20px
-	}
-	.slider-area .hero__caption .hero-text1 span,
-	.slider-area .hero__caption .hero-text1 a {
-		font-size: 1rem;
-		line-height: 1.3
-	}
-	.slider-area .hero__caption .hero-text2 a {
-		font-size: 19px;
-		padding: 11px 26px
+
+@media (max-width: 767px) {
+	.slider-area .hero__caption .hero-subtitle {
+		font-size: 16px;
+		max-width: 100%
 	}
 }
 
 .slider-area .hero__caption .hero-text2 {
-	margin-top: 32px
-}
-
-@media only screen and (min-width: 992px) and (max-width: 1200px) {
-	.slider-area .hero__caption .hero-text2 { margin-top: 28px }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-	.slider-area .hero__caption .hero-text2 { margin-top: 22px }
-}
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-	.slider-area .hero__caption .hero-text2 { margin-top: 15px }
-}
-@media (max-width: 575px) {
-	.slider-area .hero__caption .hero-text2 { margin-top: 15px }
+	margin: 0
 }
 
 .hero-overly {
@@ -1785,12 +1741,17 @@ hr {
 	background-image: -ms-linear-gradient(0deg, rgba(26, 20, 11, 0.80) 0%, rgba(26, 20, 11, 0.20) 100%)
 }
 
-/* Overlay reforzado solo para el hero principal (fondo del portón amarillo,
-   necesita más oscuro para que el título dorado siga siendo legible) */
+/* Overlay del hero principal (index): degradado izquierda→derecha para
+   resaltar el texto y dejar la foto visible del lado derecho */
 .slider-height.hero-overly::before {
-	background-image: -moz-linear-gradient(0deg, rgba(26, 20, 11, 0.90) 0%, rgba(26, 20, 11, 0.68) 100%);
-	background-image: -webkit-linear-gradient(0deg, rgba(26, 20, 11, 0.90) 0%, rgba(26, 20, 11, 0.68) 100%);
-	background-image: -ms-linear-gradient(0deg, rgba(26, 20, 11, 0.90) 0%, rgba(26, 20, 11, 0.68) 100%)
+	background-image: linear-gradient(to right, rgba(20, 15, 10, 0.92) 0%, rgba(20, 15, 10, 0.92) 45%, rgba(20, 15, 10, 0.45) 100%)
+}
+
+@media (max-width: 575px) {
+	.slider-height.hero-overly::before {
+		background-image: none;
+		background-color: rgba(20, 15, 10, 0.75)
+	}
 }
 
 .single-slider .container {
