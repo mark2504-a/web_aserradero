@@ -1108,6 +1108,21 @@ hr {
 	background-color: #D9A429;
 }
 
+/* Intro corta debajo de "Nuestros Productos" (reemplaza el tab "Todos") */
+.productos-intro {
+	color: rgba(26, 20, 11, 0.75);
+	font-size: 18px;
+	line-height: 1.6;
+	max-width: 560px;
+	margin: 16px 0 0 0;
+}
+
+@media (max-width: 767px) {
+	.productos-intro {
+		font-size: 16px;
+	}
+}
+
 /* ---- Valores list ---- */
 .valores-list {
 	list-style: none;
@@ -1697,6 +1712,33 @@ hr {
 	box-shadow: 0 6px 20px rgba(217, 164, 41, 0.7);
 }
 
+/* Botón secundario "Ver productos ↓": mismo alto/forma/tamaño de letra que el principal, en versión outline.
+   Selector reforzado (.hero-text2 a.hero-link-secondary) para ganar en especificidad a ".hero-text2 a". */
+.slider-area .hero__caption .hero-text2 a.hero-link-secondary {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+	color: #D9A429;
+	font-family: "Montserrat", sans-serif;
+	font-size: 19px;
+	font-weight: 700;
+	text-decoration: none;
+	border: 2px solid #D9A429;
+	border-radius: 50px;
+	padding: 9px 24px;
+	box-shadow: none;
+	box-sizing: border-box;
+	transition: background-color .3s ease-out 0s;
+}
+
+.slider-area .hero__caption .hero-text2 a.hero-link-secondary:hover {
+	background-color: rgba(217, 164, 41, 0.15);
+	color: #D9A429;
+	transform: none;
+	box-shadow: none;
+}
+
 /* Subtítulo del hero */
 .slider-area .hero__caption .hero-subtitle {
 	color: rgba(255, 255, 255, 0.85);
@@ -1717,7 +1759,18 @@ hr {
 }
 
 .slider-area .hero__caption .hero-text2 {
-	margin: 0
+	margin: 0;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	flex-wrap: wrap;
+}
+
+@media (max-width: 575px) {
+	.slider-area .hero__caption .hero-text2 {
+		flex-direction: column;
+		align-items: flex-start;
+	}
 }
 
 .hero-overly {
@@ -2221,7 +2274,7 @@ hr {
 	font-size: 20px;
 	font-weight: 500;
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	gap: 10px;
 }
 
@@ -2231,6 +2284,7 @@ hr {
 	color: var(--crema);
 	font-size: 18px;
 	flex-shrink: 0;
+	margin-top: 3px;
 }
 
 .project-area .project-caption .single-project .project-cap h4 a,
@@ -2243,6 +2297,71 @@ hr {
 .about-area .project-caption .single-project .project-cap h4 a:hover,
 .contact-section .project-caption .single-project .project-cap h4 a:hover {
 	color: var(--dorado)
+}
+
+/* Botón "Cotizar" de cada tarjeta de producto */
+.project-area .project-caption .single-project .project-cap .btn-cotizar-producto,
+.about-area .project-caption .single-project .project-cap .btn-cotizar-producto,
+.contact-section .project-caption .single-project .project-cap .btn-cotizar-producto {
+	display: inline-block;
+	margin-top: 12px;
+	background: transparent;
+	color: var(--dorado);
+	border: 1.5px solid var(--dorado);
+	border-radius: 50px;
+	padding: 6px 18px;
+	font-size: 14px;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 600;
+	text-decoration: none;
+	transition: background-color .3s ease-out 0s, color .3s ease-out 0s, border-color .3s ease-out 0s;
+}
+
+/* La tarjeta cambia a fondo dorado en :hover; el botón pasa a borde/texto oscuro para seguir siendo legible */
+.project-area .project-caption .single-project:hover .btn-cotizar-producto,
+.about-area .project-caption .single-project:hover .btn-cotizar-producto,
+.contact-section .project-caption .single-project:hover .btn-cotizar-producto {
+	border-color: var(--negro-cafe);
+	color: var(--negro-cafe);
+}
+
+.project-area .project-caption .single-project .project-cap .btn-cotizar-producto:hover,
+.about-area .project-caption .single-project .project-cap .btn-cotizar-producto:hover,
+.contact-section .project-caption .single-project .project-cap .btn-cotizar-producto:hover {
+	background: var(--dorado);
+	color: var(--negro-cafe);
+	border-color: var(--dorado);
+}
+
+/* Tarjetas de igual altura en la sección de productos (solo tab visible #nav-home):
+   la columna y .single-project se estiran a la altura de la fila, .project-cap
+   reparte ese espacio y el botón "Cotizar" queda siempre a 18px del nombre. */
+#nav-home .project-caption .row > div {
+	display: flex;
+	flex-direction: column;
+}
+
+#nav-home .single-project {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+#nav-home .project-cap {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+/* Reserva siempre el alto de 2 líneas (line-height 1.2 x font-size 20px = 24px c/u)
+   para que el nombre del producto ocupe 1 o 2 líneas sin mover el botón */
+#nav-home .project-cap h4 {
+	min-height: 48px;
+}
+
+#nav-home .btn-cotizar-producto {
+	margin-top: 18px;
+	align-self: flex-start;
 }
 
 .project-area .project-caption .single-project .plus-btn,
