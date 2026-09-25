@@ -1078,7 +1078,7 @@ hr {
 
 .section-tittle .front-text h2 {
 	color: #231B10;
-	font-size: 65px;
+	font-size: 52px;
 	font-weight: 800;
 	line-height: 1.2;
 	text-transform: uppercase;
@@ -1257,11 +1257,11 @@ hr {
 }
 
 @media (max-width: 575px) {
-	.section-tittle .front-text h2 { font-size: 40px; line-height: 1.4 }
+	.section-tittle .front-text h2 { font-size: 34px; line-height: 1.4 }
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-	.section-tittle .front-text h2 { font-size: 40px; line-height: 1.4 }
+	.section-tittle .front-text h2 { font-size: 34px; line-height: 1.4 }
 }
 
 .section-tittle span.back-text {
@@ -1330,12 +1330,12 @@ hr {
 	.section-tittle.section-tittle3 span.back-text { font-size: 98px; transform: translateY(-131%) }
 }
 
-.section-tittle.section-tittle4 .front-text h2 { font-size: 70px; color: #fff }
+.section-tittle.section-tittle4 .front-text h2 { font-size: 52px; color: #fff }
 @media (max-width: 575px) {
-	.section-tittle.section-tittle4 .front-text h2 { font-size: 35px }
+	.section-tittle.section-tittle4 .front-text h2 { font-size: 34px }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-	.section-tittle.section-tittle4 .front-text h2 { font-size: 40px }
+	.section-tittle.section-tittle4 .front-text h2 { font-size: 34px }
 }
 .section-tittle.section-tittle4 span.back-text {
 	-webkit-text-stroke: 1px rgba(255,255,255,0.2);
@@ -2089,6 +2089,94 @@ hr {
 .more-btn:hover i { color: #fff; background: #D9A429 }
 
 /* ---- About / Support ---- */
+
+/* "Nuestra Empresa" (#sobre) usa .container/.row/.col-lg-6 en vez del
+   .support-wrapper de ancho fijo en px que hacía que la foto se saliera
+   hasta el borde de la pantalla en escritorio. Las demás secciones que
+   comparten .support-company-area (#mision-vision, #valores) no se tocan. */
+#sobre .section-tittle {
+	margin-bottom: 24px;
+}
+
+#sobre .right-content {
+	position: relative;
+}
+
+#sobre .right-img img {
+	width: 100%;
+	border-radius: 12px;
+	aspect-ratio: 1200 / 750;
+	object-fit: cover;
+}
+
+/* Lista de diferenciadores */
+#sobre .sobre-diferenciadores {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	padding: 0;
+	margin: 0 0 30px 0;
+}
+
+#sobre .sobre-diferenciadores li {
+	display: flex;
+	align-items: flex-start;
+	gap: 16px;
+}
+
+#sobre .sobre-dif-icono {
+	flex-shrink: 0;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	background: rgba(217, 164, 41, 0.15);
+	color: #D9A429;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+}
+
+#sobre .sobre-dif-texto {
+	color: #231B10;
+	font-size: 15px;
+	line-height: 1.5;
+}
+
+#sobre .sobre-dif-texto strong {
+	display: block;
+	font-size: 16px;
+	margin-bottom: 2px;
+}
+
+#sobre .sobre-dif-desc {
+	display: block;
+	color: rgba(26, 20, 11, 0.75);
+}
+
+/* Llamado a la acción */
+#sobre .sobre-cta {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 16px 28px;
+}
+
+#sobre .sobre-link-secondary {
+	color: #231B10;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 700;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+	transition: color .3s ease, border-color .3s ease;
+}
+
+#sobre .sobre-link-secondary:hover {
+	color: #D9A429;
+	border-color: #D9A429;
+}
+
 .support-company-area .support-wrapper {
 	display: flex;
 	justify-content: space-between;
@@ -2258,8 +2346,51 @@ hr {
 	font-size: 10px
 }
 
+/* Sello "1997 · Desde" en la esquina inferior izquierda de la foto.
+   Regla propia y autosuficiente: ya no depende de .support-wrapper
+   (esa jerarquía se quitó de #sobre), así que se define todo aquí. */
 #sobre .support-img-cap {
-	padding: 37px 62px
+	position: absolute;
+	bottom: 24px;
+	left: 24px;
+	right: auto;
+	top: auto;
+	margin: 0;
+	width: auto;
+	max-width: calc(100% - 48px);
+	background: #231B10;
+	border: 1px solid #D9A429;
+	border-radius: 10px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+	padding: 18px 28px;
+	text-align: center;
+	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+#sobre .support-img-cap:hover {
+	transform: translateY(-3px);
+	border-color: #E1B654;
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 12px rgba(217, 164, 41, 0.35);
+}
+
+#sobre .support-img-cap span {
+	display: block;
+	color: #D9A429;
+	font-size: 44px;
+	font-weight: 800;
+	font-family: "Montserrat", sans-serif;
+	line-height: 1.2;
+	margin: 0;
+}
+
+#sobre .support-img-cap p {
+	color: #fff;
+	font-size: 13px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	margin: 0;
+	line-height: 1;
 }
 
 @media (max-width: 767px) {

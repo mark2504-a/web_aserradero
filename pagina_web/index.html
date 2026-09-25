@@ -63,7 +63,18 @@
                   transform: translateX(-15%) !important;
                 }
                 #sobre .support-img-cap {
-                  max-width: 84.24% !important;
+                  left: 14px !important;
+                  bottom: 14px !important;
+                  max-width: calc(100% - 28px) !important;
+                  padding: 14px 20px !important;
+                  transform: none !important;
+                }
+                #sobre .support-img-cap span {
+                  font-size: 32px !important;
+                }
+                #sobre .support-img-cap p {
+                  font-size: 13px !important;
+                  letter-spacing: 4px !important;
                 }
                 .support-company-area .support-img-cap span,
                 .support-company-area .support-img-cap p {
@@ -281,26 +292,49 @@
         <!-- slider Area End-->
         <!--About Area Start -->
         <section class="support-company-area fix pt-10 section-padding30" id="sobre">
-            <div class="support-wrapper align-items-end">
-                <div class="left-content">
-                    <!-- section tittle -->
-                    <div class="section-tittle mb-55">
-                        <div class="front-text">
-                            <h2 class="">Nuestra Empresa</h2>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <!-- section tittle -->
+                        <div class="section-tittle mb-55">
+                            <div class="front-text">
+                                <h2 class="">Nuestra Empresa</h2>
+                            </div>
+                        </div>
+                        <div class="support-caption">
+                            <p>Desde 1997 abastecemos de madera a carpinteros, constructores y familias de San Salvador. Lo que empezó como un pequeño depósito hoy es un aserradero de confianza, con el mismo compromiso de siempre: madera de calidad y un trato directo.</p>
+                            <p>Aquí no solo vendes madera: te la cortamos y cepillamos a la medida en nuestro propio local, para que llegue lista a tu obra.</p>
+                            <ul class="sobre-diferenciadores">
+                                <li>
+                                    <span class="sobre-dif-icono"><i class="fa-solid fa-ruler-combined"></i></span>
+                                    <span class="sobre-dif-texto"><strong>Corte y cepillado en el local</strong><span class="sobre-dif-desc">Tu madera lista, sin intermediarios.</span></span>
+                                </li>
+                                <li>
+                                    <span class="sobre-dif-icono"><i class="fa-solid fa-tree"></i></span>
+                                    <span class="sobre-dif-texto"><strong>Pino, conacaste y plywood</strong><span class="sobre-dif-desc">Variedad para construcción, carpintería y hogar.</span></span>
+                                </li>
+                                <li>
+                                    <span class="sobre-dif-icono"><i class="fa-solid fa-handshake"></i></span>
+                                    <span class="sobre-dif-texto"><strong>Atención personalizada</strong><span class="sobre-dif-desc">Te asesoramos para que compres solo lo que necesitas.</span></span>
+                                </li>
+                            </ul>
+                            <div class="sobre-cta">
+                                <a href="#contacto" class="btn-cotizar-submit">Solicita tu cotización</a>
+                                <a href="productos.html" class="sobre-link-secondary">Ver productos →</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="support-caption">
-                        <p>Todo gran proyecto comienza con una base sólida, y la nuestra se plantó en 1997. En aquel entonces, nacimos con una visión clara: convertirnos en el aliado estratégico de quienes ven en la madera no solo un material, sino el alma de sus espacios.</p>
-                        <p>​Lo que empezó como un pequeño depósito, con el paso de las décadas se transformó en un referente para la comunidad. Hemos visto crecer ciudades, remodelar hogares y nacer piezas de mobiliario que hoy cuentan historias en las salas de miles de familias.</p></div>
-                </div>
-                <div class="right-content">
+                    <div class="col-lg-6">
+                        <div class="right-content">
 
-                    <div class="right-img">
-                        <img src="assets/img/gallery/nosotros_3.jpeg" alt="">
-                    </div>
-                    <div class="support-img-cap text-center">
-                        <span>1997</span>
-                        <p>Desde</p>
+                            <div class="right-img">
+                                <img src="assets/img/gallery/nosotros_3.jpeg" alt="">
+                            </div>
+                            <div class="support-img-cap text-center">
+                                <span>1997</span>
+                                <p>Desde</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
