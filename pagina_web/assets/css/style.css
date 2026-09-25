@@ -1914,19 +1914,60 @@ hr {
 }
 
 /* ---- Services ---- */
+/* Espacio antes de la franja "Conoce nuestro catálogo" */
+.services-area1 {
+	padding-bottom: 80px;
+}
+
+@media (max-width: 767px) {
+	.services-area1 {
+		padding-bottom: 50px;
+	}
+}
+
+/* Las 2 tarjetas empiezan a la misma altura y miden lo mismo */
+.services-area1 .row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
 .services-area1 .single-service-cap {
-	overflow: hidden
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	border-radius: 12px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+	transition: transform .3s ease-out 0s, box-shadow .3s ease-out 0s;
+}
+
+.services-area1 .single-service-cap:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .services-area1 .single-service-cap .service-img {
-	border-radius: 10px;
+	flex-shrink: 0;
+	border-radius: 12px 12px 0 0;
 	overflow: hidden
+}
+
+/* El bloque de texto crece para ocupar el espacio libre y empuja los botones abajo */
+.services-area1 .single-service-cap .service-cap {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.services-area1 .single-service-cap .service-buttons {
+	margin-top: auto;
 }
 
 .services-area1 .single-service-cap .service-img img {
 	width: 100%;
 	aspect-ratio: 4 / 3;
 	object-fit: cover;
+	border-radius: 12px 12px 0 0;
 	transform: scale(1);
 	-webkit-transition: all .5s ease-out 0s;
 	-moz-transition: all .5s ease-out 0s;
@@ -1948,7 +1989,7 @@ hr {
 }
 
 .services-area1 .single-service-cap .service-cap h4 {
-	margin-bottom: 35px;
+	margin-bottom: 10px;
 }
 
 .services-area1 .single-service-cap .service-cap h4 a {
@@ -1964,10 +2005,53 @@ hr {
 	color: #D9A429
 }
 
-.services-area1 .single-service-cap .service-icon img { width: 100% }
+/* Descripción corta debajo del título de cada servicio */
+.services-area1 .single-service-cap .service-desc {
+	color: rgba(26, 20, 11, 0.75);
+	font-size: 16px;
+	line-height: 1.5;
+	margin: 0 0 20px 0;
+}
+
+/* Fila con el enlace "Ver detalles" y el botón "Cotizar este servicio" */
+.services-area1 .single-service-cap .service-buttons {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 16px 24px;
+}
+
+/* El botón "Cotizar" reutiliza .btn-cotizar-producto, pero sobre el fondo claro
+   de esta tarjeta necesita un dorado más oscuro para leerse bien */
+.services-area1 .single-service-cap .btn-cotizar-producto {
+	background: transparent;
+	color: #B8860B;
+	border: 2px solid #B8860B;
+	border-radius: 30px;
+	padding: 8px 20px;
+	font-size: 15px;
+	font-weight: 600;
+}
+
+.services-area1 .single-service-cap .btn-cotizar-producto:hover {
+	background: #D9A429;
+	color: #231B10;
+	border-color: #D9A429;
+}
+
+/* Franja inferior decorativa: antes era la imagen services_icon.png (naranja);
+   ahora es una barra CSS en el dorado del sitio */
+.services-area1 .single-service-cap .service-icon {
+	height: 3px;
+	background: #D9A429;
+}
+
+.services-area1 .single-service-cap .service-icon img {
+	display: none;
+}
 
 .single-service-cap:hover .service-img img {
-	transform: scale(1.1)
+	transform: scale(1.05)
 }
 
 .single-service-cap:hover .more-btn i {
@@ -1979,8 +2063,9 @@ hr {
 	color: #231B10;
 	font-size: 15px;
 	font-weight: 500;
-	display: block;
-	margin-bottom: 10px;
+	display: inline-flex;
+	align-items: center;
+	margin-bottom: 0;
 }
 
 .more-btn i {

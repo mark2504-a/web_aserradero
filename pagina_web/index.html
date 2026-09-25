@@ -384,35 +384,43 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="col-lg-6">
                         <div class="single-service-cap mb-30">
                             <div class="service-img">
                                 <img src="assets/img/services/corte-a-medida.jpg" alt="" class="img-contain">
                             </div>
                             <div class="service-cap">
                                 <h4><a>Corte a medida</a></h4>
-                                <a href="./details/services_detailscuatro.html" rel="noopener noreferrer" class="more-btn">Leer más<i class="fa-solid fa-arrow-right"></i></a>
+                                <p class="service-desc">Te entregamos la madera exacta que necesitas para tu proyecto. Menos desperdicio, menos trabajo en obra.</p>
+                                <div class="service-buttons">
+                                    <a href="./details/services_detailscuatro.html" rel="noopener noreferrer" class="more-btn">Ver detalles<i class="fa-solid fa-arrow-right"></i></a>
+                                    <a href="#contacto" class="btn-cotizar-producto" data-producto="Corte a medida">Cotizar este servicio</a>
+                                </div>
                             </div>
                             <div class="service-icon">
                                 <img src="assets/img/icon/services_icon.png" alt="">
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="col-lg-6">
                         <div class="single-service-cap mb-30">
                             <div class="service-img">
                                 <img src="assets/img/services/cepillado-profesional.jpg" alt="" class="img-contain">
                             </div>
                             <div class="service-cap">
                                 <h4><a>Cepillado profesional</a></h4>
-                                <a href="./details/services_detailscinco.html" rel="noopener noreferrer" class="more-btn">Leer más<i class="fa-solid fa-arrow-right"></i></a>
+                                <p class="service-desc">Superficies lisas y parejas, listas para barnizar, pintar o ensamblar.</p>
+                                <div class="service-buttons">
+                                    <a href="./details/services_detailscinco.html" rel="noopener noreferrer" class="more-btn">Ver detalles<i class="fa-solid fa-arrow-right"></i></a>
+                                    <a href="#contacto" class="btn-cotizar-producto" data-producto="Cepillado profesional">Cotizar este servicio</a>
+                                </div>
                             </div>
                             <div class="service-icon">
                                 <img src="assets/img/icon/services_icon.png" alt="">
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
@@ -741,6 +749,16 @@
                         }, 500);
                     }
                 }
+
+                // Botones "Cotizar" (productos destacados y servicios)
+                var botones = document.querySelectorAll('.btn-cotizar-producto');
+                botones.forEach(function (boton) {
+                    boton.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        var producto = boton.getAttribute('data-producto') || '';
+                        cotizarProducto(producto);
+                    });
+                });
 
                 // Si se llega desde productos.html con ?producto=..., precarga el formulario igual que un botón "Cotizar"
                 var params = new URLSearchParams(window.location.search);
