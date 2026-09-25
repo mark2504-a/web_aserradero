@@ -2092,8 +2092,8 @@ hr {
 
 /* "Nuestra Empresa" (#sobre) usa .container/.row/.col-lg-6 en vez del
    .support-wrapper de ancho fijo en px que hacía que la foto se saliera
-   hasta el borde de la pantalla en escritorio. Las demás secciones que
-   comparten .support-company-area (#mision-vision, #valores) no se tocan. */
+   hasta el borde de la pantalla en escritorio. #mision-vision usa el mismo
+   tratamiento más abajo. #valores sigue con .support-wrapper, sin tocar. */
 #sobre .section-tittle {
 	margin-bottom: 24px;
 }
@@ -2175,6 +2175,118 @@ hr {
 #sobre .sobre-link-secondary:hover {
 	color: #D9A429;
 	border-color: #D9A429;
+}
+
+/* "Misión y Visión" (#mision-vision): mismo tratamiento que #sobre, también
+   fuera de .support-wrapper para que la foto quede dentro del contenedor. */
+#mision-vision {
+	padding-top: 60px;
+}
+
+@media (max-width: 767px) {
+	#mision-vision {
+		padding-top: 40px;
+	}
+}
+
+#mision-vision .section-tittle {
+	margin-bottom: 24px;
+}
+
+#mision-vision .right-content {
+	position: relative;
+}
+
+#mision-vision .right-img img {
+	width: 100%;
+	border-radius: 12px;
+	aspect-ratio: 1200 / 750;
+	object-fit: cover;
+}
+
+/* Tarjetas de Misión / Visión */
+#mision-vision .mv-card {
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+	border-left: 4px solid #D9A429;
+	padding: 24px;
+}
+
+#mision-vision .mv-card + .mv-card {
+	margin-top: 16px;
+}
+
+#mision-vision .mv-card__header {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 10px;
+}
+
+#mision-vision .mv-card__header i {
+	color: #D9A429;
+	font-size: 22px;
+	flex-shrink: 0;
+}
+
+#mision-vision .mv-card h4 {
+	margin: 0;
+	color: #231B10;
+	font-size: 22px;
+	font-weight: 700;
+}
+
+#mision-vision .mv-card p {
+	margin: 0;
+	color: rgba(26, 20, 11, 0.8);
+	font-size: 17px;
+	line-height: 1.6;
+}
+
+/* Sello "Equipo · Propio", mismo estilo que el de #sobre */
+#mision-vision .support-img-cap {
+	position: absolute;
+	bottom: 24px;
+	left: 24px;
+	right: auto;
+	top: auto;
+	margin: 0;
+	width: auto;
+	max-width: calc(100% - 48px);
+	background: #231B10;
+	border: 1px solid #D9A429;
+	border-radius: 10px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+	padding: 18px 28px;
+	text-align: center;
+	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+#mision-vision .support-img-cap:hover {
+	transform: translateY(-3px);
+	border-color: #E1B654;
+	box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 12px rgba(217, 164, 41, 0.35);
+}
+
+#mision-vision .support-img-cap span {
+	display: block;
+	color: #D9A429;
+	font-size: 36px;
+	font-weight: 800;
+	font-family: "Montserrat", sans-serif;
+	line-height: 1.2;
+	margin: 0;
+}
+
+#mision-vision .support-img-cap p {
+	color: #fff;
+	font-size: 13px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	margin: 0;
+	line-height: 1;
 }
 
 .support-company-area .support-wrapper {
@@ -2265,8 +2377,6 @@ hr {
 	border-radius: 10px
 }
 
-#sobre .support-wrapper .right-content .right-img img,
-#mision-vision .support-wrapper .right-content .right-img img,
 #valores .support-wrapper .right-content .right-img img {
 	max-width: 1200px;
 	aspect-ratio: 1200 / 750;
