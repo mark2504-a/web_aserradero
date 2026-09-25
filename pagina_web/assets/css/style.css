@@ -1226,10 +1226,7 @@ hr {
 /* ---- Valores (franja oscura de ancho completo, sin foto lateral) ---- */
 #valores {
 	position: relative;
-	background-image: url("../img/services/cepilladora-maquina.jpg");
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
+	background-color: #231B10;
 	padding: 90px 0;
 }
 
@@ -2596,120 +2593,61 @@ hr {
 	}
 }
 
-/* ---- Count area ---- */
-.count-area {
-	position: relative;
-	z-index: 1;
-	margin-top: -175px
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-	.count-area .col-lg-4:nth-child(1) .count-clients .single-counter,
-	.count-area .col-lg-4:nth-child(2) .count-clients .single-counter {
-		padding-bottom: 0px;
-		text-align: center
-	}
-}
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-	.count-area .col-lg-4:nth-child(1) .count-clients .single-counter,
-	.count-area .col-lg-4:nth-child(2) .count-clients .single-counter {
-		padding-bottom: 0px;
-		text-align: center
-	}
-}
-@media (max-width: 575px) {
-	.count-area .col-lg-4:nth-child(1) .count-clients .single-counter,
-	.count-area .col-lg-4:nth-child(2) .count-clients .single-counter {
-		padding-bottom: 0px;
-		text-align: center
-	}
-}
-
-.count-area .count-clients {
+/* ---- Experiencia: contadores integrados en la misma franja ---- */
+.experiencia-counters {
 	display: flex;
-	justify-content: center
+	align-items: stretch;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin-top: 50px;
+	padding-top: 40px;
+	border-top: 1px solid rgba(217, 164, 41, 0.25);
 }
 
-.count-area .count-clients .single-counter {
-	padding: 60px 0;
+.experiencia-counter {
+	flex: 1 1 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
+	padding: 0 24px;
+	border-left: 1px solid rgba(217, 164, 41, 0.4);
 }
 
-.count-area .count-clients .single-counter:last-child { margin-right: 0px }
+.experiencia-counter:first-child {
+	border-left: none;
+}
 
-.count-area .count-clients .single-counter .count-number span {
+.experiencia-counter__numero {
 	color: #D9A429;
-	font-size: 55px;
-	font-weight: 700;
-	line-height: 1;
-	margin-bottom: 0;
-	display: block
+	font-family: "Montserrat", sans-serif;
+	font-size: 40px;
+	font-weight: 800;
+	line-height: 1.1;
 }
 
-.count-area .count-clients .single-counter p {
-	font-size: 14px;
-	font-weight: 300;
-	line-height: 1;
-	margin: 0;
-	padding: 0
+.experiencia-counter__etiqueta {
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 15px;
+	margin-top: 6px;
 }
 
-.count-area .count-clients .single-counter .count-row {
-	display: flex;
-	align-items: center;
-}
-
-.count-area .count-clients .single-counter .count-text { padding-left: 20px; }
-
-.count-area .count-clients .single-counter > p {
-	color: #fff;
-	font-family: "Rubik", sans-serif;
-	font-size: 17.6px;
-	font-weight: 700;
-	text-transform: uppercase;
-	margin-bottom: 0px;
-	display: block;
-}
-
-.count-area .count-clients .single-counter .count-text p {
-	color: #fff;
-	font-family: "Rubik", sans-serif;
-	font-size: 17.6px;
-	font-weight: 700;
-	text-transform: uppercase;
-	margin-bottom: 10px;
-	display: block
-}
-
-.count-area .col-lg-4:nth-child(3) .count-clients .single-counter .count-text p {
-	font-size: 20.8px;
-	margin-bottom: 0px;
-}
-
-.count-area .col-lg-4:nth-child(3) .count-clients .single-counter .count-text {
-	order: 1;
-	padding-left: 0;
-}
-
-.count-area .col-lg-4:nth-child(3) .count-clients .single-counter .count-number {
-	order: 2;
-}
-
-
-.count-area .count-clients .single-counter .count-text h5 {
-	color: #fff;
-	font-size: 36px;
-	text-transform: capitalize;
-	margin-bottom: 0px;
-	display: block
-}
-
-.count-bg {
-	background-size: cover;
-	background-repeat: no-repeat
+@media (max-width: 767px) {
+	.experiencia-counters {
+		flex-direction: column;
+		margin-top: 30px;
+		padding-top: 0;
+		border-top: none;
+	}
+	.experiencia-counter {
+		border-left: none;
+		border-top: 1px solid rgba(217, 164, 41, 0.4);
+		padding: 20px 0;
+	}
+	.experiencia-counter:first-child {
+		border-top: none;
+		padding-top: 0;
+	}
 }
 
 /* ---- Projects ---- */
@@ -3009,8 +2947,8 @@ hr {
 .contact-with-area {
 	position: relative;
 	z-index: 0;
-	padding-top: 150px;
-	padding-bottom: 250px;
+	padding-top: 70px;
+	padding-bottom: 70px;
 	background-size: cover;
 	background-repeat: no-repeat
 }
@@ -3025,17 +2963,11 @@ hr {
 	bottom: 0;
 	right: 0;
 	z-index: -1;
-	background-repeat: no-repeat;
-	background-image: -moz-linear-gradient(0deg, rgba(26, 20, 11, 0.75) 0%, rgba(26, 20, 11, 0.45) 100%);
-	background-image: -webkit-linear-gradient(0deg, rgba(26, 20, 11, 0.75) 0%, rgba(26, 20, 11, 0.45) 100%);
-	background-image: -ms-linear-gradient(0deg, rgba(26, 20, 11, 0.75) 0%, rgba(26, 20, 11, 0.45) 100%)
+	background-color: rgba(35, 27, 16, 0.85);
 }
 
-@media only screen and (min-width: 576px) and (max-width: 767px) {
-	.contact-with-area { padding-top: 70px; padding-bottom: 180px }
-}
-@media (max-width: 575px) {
-	.contact-with-area { padding-top: 70px; padding-bottom: 180px }
+@media (max-width: 767px) {
+	.contact-with-area { padding-top: 50px; padding-bottom: 50px }
 }
 
 .contact-with-area .contact-us-caption p {

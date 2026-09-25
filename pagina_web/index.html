@@ -112,66 +112,6 @@
                   text-align: center !important;
                 }
               }
-
-              @media (max-width: 767px) {
-                .count-area *::before,
-                .count-area *::after {
-                  content: none !important;
-                }
-                .count-area .count-wrapper {
-                  padding: 18px 8px !important;
-                }
-                .count-area .row.justify-content-center {
-                  display: flex !important;
-                  flex-wrap: nowrap !important;
-                  justify-content: space-between !important;
-                  row-gap: 0 !important;
-                  align-items: flex-start !important;
-                }
-                .count-area .col-lg-4,
-                .count-area .col-md-4,
-                .count-area .col-sm-6 {
-                  flex: 1 1 33% !important;
-                  max-width: 33% !important;
-                  padding: 4px 2px !important;
-                }
-                .count-area .count-clients {
-                  padding: 0 !important;
-                  margin: 0 !important;
-                }
-                .count-area .single-counter {
-                  text-align: center !important;
-                }
-                .count-area .single-counter > p {
-                  font-size: 0.6rem !important;
-                  letter-spacing: 0.3px !important;
-                  text-transform: uppercase !important;
-                  margin-bottom: 2px !important;
-                  white-space: nowrap !important;
-                }
-                .count-area .count-row {
-                  display: flex !important;
-                  align-items: baseline !important;
-                  justify-content: center !important;
-                  gap: 4px !important;
-                  flex-wrap: wrap !important;
-                }
-                .count-area .count-number .counter {
-                  font-size: 1.5rem !important;
-                  line-height: 1 !important;
-                }
-                .count-area .count-text h5 {
-                  font-size: 0.75rem !important;
-                  margin: 0 !important;
-                }
-                .count-area .count-text p {
-                  font-size: 0.6rem !important;
-                  letter-spacing: 0.3px !important;
-                  text-transform: uppercase !important;
-                  margin: 0 0 2px !important;
-                  white-space: nowrap !important;
-                }
-              }
             </style>
    </head>
 
@@ -304,6 +244,75 @@
             </div>
         </div>
         <!-- slider Area End-->
+
+        <!-- Services Area Start -->
+        <section class="services-area1" id="servicios">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-tittle mb-55">
+                            <div class="front-text">
+                                <h2 class="">Nuestros Servicios</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="single-service-cap mb-30">
+                            <div class="service-img">
+                                <img src="assets/img/services/corte-a-medida.jpg" alt="" class="img-contain">
+                            </div>
+                            <div class="service-cap">
+                                <h4><a>Corte a medida</a></h4>
+                                <p class="service-desc">Te entregamos la madera exacta que necesitas para tu proyecto. Menos desperdicio, menos trabajo en obra.</p>
+                                <div class="service-buttons">
+                                    <a href="./details/services_detailscuatro.html" rel="noopener noreferrer" class="more-btn">Ver detalles<i class="fa-solid fa-arrow-right"></i></a>
+                                    <a href="#contacto" class="btn-cotizar-producto" data-producto="Corte a medida">Cotizar este servicio</a>
+                                </div>
+                            </div>
+                            <div class="service-icon">
+                                <img src="assets/img/icon/services_icon.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-service-cap mb-30">
+                            <div class="service-img">
+                                <img src="assets/img/services/cepillado-profesional.jpg" alt="" class="img-contain">
+                            </div>
+                            <div class="service-cap">
+                                <h4><a>Cepillado profesional</a></h4>
+                                <p class="service-desc">Superficies lisas y parejas, listas para barnizar, pintar o ensamblar.</p>
+                                <div class="service-buttons">
+                                    <a href="./details/services_detailscinco.html" rel="noopener noreferrer" class="more-btn">Ver detalles<i class="fa-solid fa-arrow-right"></i></a>
+                                    <a href="#contacto" class="btn-cotizar-producto" data-producto="Cepillado profesional">Cotizar este servicio</a>
+                                </div>
+                            </div>
+                            <div class="service-icon">
+                                <img src="assets/img/icon/services_icon.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!--Services Area End-->
+
+        <!-- Invitación al catálogo -->
+        <section class="catalogo-cta">
+            <div class="container">
+                <div class="catalogo-cta__inner">
+                    <div class="catalogo-cta__texto">
+                        <h3>Conoce nuestro catálogo</h3>
+                        <p>Plywood, madera de pino y conacaste, puertas y más.</p>
+                    </div>
+                    <a href="productos.html" class="btn-cotizar-submit">Ver productos →</a>
+                </div>
+            </div>
+        </section>
+
         <!--About Area Start -->
         <section class="support-company-area fix pt-10 section-padding30" id="sobre">
             <div class="container">
@@ -442,147 +451,41 @@
             </div>
         </section>
 
-        <!-- Services Area Start -->
-        <section class="services-area1" id="servicios">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-tittle mb-55">
-                            <div class="front-text">
-                                <h2 class="">Nuestros Servicios</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="single-service-cap mb-30">
-                            <div class="service-img">
-                                <img src="assets/img/services/corte-a-medida.jpg" alt="" class="img-contain">
-                            </div>
-                            <div class="service-cap">
-                                <h4><a>Corte a medida</a></h4>
-                                <p class="service-desc">Te entregamos la madera exacta que necesitas para tu proyecto. Menos desperdicio, menos trabajo en obra.</p>
-                                <div class="service-buttons">
-                                    <a href="./details/services_detailscuatro.html" rel="noopener noreferrer" class="more-btn">Ver detalles<i class="fa-solid fa-arrow-right"></i></a>
-                                    <a href="#contacto" class="btn-cotizar-producto" data-producto="Corte a medida">Cotizar este servicio</a>
-                                </div>
-                            </div>
-                            <div class="service-icon">
-                                <img src="assets/img/icon/services_icon.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="single-service-cap mb-30">
-                            <div class="service-img">
-                                <img src="assets/img/services/cepillado-profesional.jpg" alt="" class="img-contain">
-                            </div>
-                            <div class="service-cap">
-                                <h4><a>Cepillado profesional</a></h4>
-                                <p class="service-desc">Superficies lisas y parejas, listas para barnizar, pintar o ensamblar.</p>
-                                <div class="service-buttons">
-                                    <a href="./details/services_detailscinco.html" rel="noopener noreferrer" class="more-btn">Ver detalles<i class="fa-solid fa-arrow-right"></i></a>
-                                    <a href="#contacto" class="btn-cotizar-producto" data-producto="Cepillado profesional">Cotizar este servicio</a>
-                                </div>
-                            </div>
-                            <div class="service-icon">
-                                <img src="assets/img/icon/services_icon.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-        <!--Services Area End-->
-
-        <!-- About Area End -->
-        <!-- Invitación al catálogo -->
-        <section class="catalogo-cta">
-            <div class="container">
-                <div class="catalogo-cta__inner">
-                    <div class="catalogo-cta__texto">
-                        <h3>Conoce nuestro catálogo</h3>
-                        <p>Plywood, madera de pino y conacaste, puertas y más.</p>
-                    </div>
-                    <a href="productos.html" class="btn-cotizar-submit">Ver productos →</a>
-                </div>
-            </div>
-        </section>
         <!-- contact with us Start -->
         <section class="contact-with-area" id="experiencia" data-background="assets/img/background/experiencia3.jpeg">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-8 col-lg-9 offset-xl-1 offset-lg-1">
+                    <div class="col-lg-8">
                         <div class="contact-us-caption">
                             <div class="team-info mb-30 pt-45">
                                 <!-- Section Tittle -->
                                 <div class="section-tittle section-tittle4">
                                     <div class="front-text">
-                                        <h2 class="">Experiencia</h2>
+                                        <h2 class="">Experiencia que respalda</h2>
                                     </div>
                                 </div>
-                                <p>Contamos con una sólida experiencia en el sector, ofreciendo soluciones de calidad adaptadas a las necesidades de nuestros clientes, con el compromiso de brindar siempre el mejor servicio posible.</p>
+                                <p>Casi tres décadas surtiendo madera a San Salvador.</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="experiencia-counters">
+                    <div class="experiencia-counter">
+                        <span class="experiencia-counter__numero">29</span>
+                        <span class="experiencia-counter__etiqueta">Años de experiencia</span>
+                    </div>
+                    <div class="experiencia-counter">
+                        <span class="experiencia-counter__numero">19</span>
+                        <span class="experiencia-counter__etiqueta">Productos en catálogo</span>
+                    </div>
+                    <div class="experiencia-counter">
+                        <span class="experiencia-counter__numero">100%</span>
+                        <span class="experiencia-counter__etiqueta">Corte y cepillado en el local</span>
                     </div>
                 </div>
             </div>
         </section>
         <!-- contact with us End-->
-        <!-- CountDown Area Start -->
-        <div class="count-area">
-            <div class="container">
-                <div class="count-wrapper count-bg" data-background="assets/img/background/cafe.png">
-                    <div class="row justify-content-center" >
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <div class="count-clients">
-                                <div class="single-counter">
-                                    <p>Experiencia</p>
-                                    <div class="count-row">
-                                        <div class="count-number">
-                                            <span class="counter">29</span>
-                                        </div>
-                                        <div class="count-text">
-                                            <h5>Años</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <div class="count-clients">
-                                <div class="single-counter">
-                                    <p>Catálogo de</p>
-                                    <div class="count-row">
-                                        <div class="count-number">
-                                            <span class="counter">19</span>
-                                        </div>
-                                        <div class="count-text">
-                                            <h5>Productos</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-6">
-                            <div class="count-clients">
-                                <div class="single-counter">
-                                    <div class="count-number">
-                                        <span class="counter">1997</span>
-                                    </div>
-                                    <div class="count-text">
-                                        <p>DESDE</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- CountDown Area End -->
         <!-- ================ contact section start ================= -->
         <section class="contact-section">
                 <div class="container">
