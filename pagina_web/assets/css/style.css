@@ -1108,18 +1108,41 @@ hr {
 	background-color: #D9A429;
 }
 
-/* Intro corta debajo de "Nuestros Productos" (reemplaza el tab "Todos") */
-.productos-intro {
-	color: rgba(26, 20, 11, 0.75);
-	font-size: 18px;
-	line-height: 1.6;
-	max-width: 560px;
-	margin: 16px 0 0 0;
+/* Franja de invitación al catálogo (reemplaza la sección de productos en index.html) */
+.catalogo-cta {
+	background: #231B10;
+	padding: 60px 0;
+}
+
+.catalogo-cta__inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+	flex-wrap: wrap;
+}
+
+.catalogo-cta__texto h3 {
+	color: #fff;
+	font-family: "Montserrat", sans-serif;
+	font-size: 28px;
+	font-weight: 700;
+	margin: 0 0 8px 0;
+}
+
+.catalogo-cta__texto p {
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 16px;
+	margin: 0;
 }
 
 @media (max-width: 767px) {
-	.productos-intro {
-		font-size: 16px;
+	.catalogo-cta {
+		padding: 40px 0;
+	}
+	.catalogo-cta__inner {
+		flex-direction: column;
+		align-items: flex-start;
 	}
 }
 
@@ -1355,24 +1378,25 @@ hr {
 }
 
 /* ---- Header ---- */
+/* Franja de redes sociales más delgada (antes 13px + iconos de 40px = 66px de alto) */
 .header-area .header-top {
-	padding: 13px 100px
+	padding: 6px 100px
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
-	.header-area .header-top { padding: 13px 80px }
+	.header-area .header-top { padding: 6px 80px }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
-	.header-area .header-top { padding: 13px 15px }
+	.header-area .header-top { padding: 6px 15px }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-	.header-area .header-top { padding: 13px 50px }
+	.header-area .header-top { padding: 6px 50px }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
-	.header-area .header-top { padding: 13px 20px }
+	.header-area .header-top { padding: 6px 20px }
 }
 @media (max-width: 575px) {
-	.header-area .header-top { padding: 13px 20px }
+	.header-area .header-top { padding: 6px 20px }
 }
 
 .header-area .header-bottom {
@@ -1421,11 +1445,11 @@ hr {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 40px;
-	height: 40px;
+	width: 26px;
+	height: 26px;
 	color: #D9A429;
-	font-size: 20px;
-	margin-left: 10px;
+	font-size: 14px;
+	margin-left: 8px;
 }
 
 .header-area .header-top .header-info-right .header-social li a:hover {
@@ -2301,7 +2325,22 @@ hr {
 .project-area .project-caption .single-project,
 .about-area .project-caption .single-project,
 .contact-section .project-caption .single-project {
-	position: relative
+	position: relative;
+	transition: transform .3s ease-out 0s, box-shadow .3s ease-out 0s;
+}
+
+.project-area .project-caption .single-project:hover,
+.about-area .project-caption .single-project:hover,
+.contact-section .project-caption .single-project:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-area .project-caption .single-project .project-img,
+.about-area .project-caption .single-project .project-img,
+.contact-section .project-caption .single-project .project-img {
+	overflow: hidden;
+	border-radius: 10px 10px 0px 0px;
 }
 
 .project-area .project-caption .single-project .project-img img,
@@ -2311,6 +2350,13 @@ hr {
 	aspect-ratio: 4 / 3;
 	object-fit: cover;
 	border-radius: 10px 10px 0px 0px;
+	transition: transform .3s ease-out 0s;
+}
+
+.project-area .project-caption .single-project:hover .project-img img,
+.about-area .project-caption .single-project:hover .project-img img,
+.contact-section .project-caption .single-project:hover .project-img img {
+	transform: scale(1.05);
 }
 
 /* Imagen de producto vertical (ej. botes) que no llena bien el recorte 4:3 por cover */
@@ -2394,12 +2440,13 @@ hr {
 	transition: background-color .3s ease-out 0s, color .3s ease-out 0s, border-color .3s ease-out 0s;
 }
 
-/* La tarjeta cambia a fondo dorado en :hover; el botón pasa a borde/texto oscuro para seguir siendo legible */
+/* Al pasar el mouse por la tarjeta, el botón "Cotizar" se pone dorado sólido */
 .project-area .project-caption .single-project:hover .btn-cotizar-producto,
 .about-area .project-caption .single-project:hover .btn-cotizar-producto,
 .contact-section .project-caption .single-project:hover .btn-cotizar-producto {
-	border-color: var(--negro-cafe);
+	background: var(--dorado);
 	color: var(--negro-cafe);
+	border-color: var(--dorado);
 }
 
 .project-area .project-caption .single-project .project-cap .btn-cotizar-producto:hover,
@@ -2408,37 +2455,6 @@ hr {
 	background: var(--dorado);
 	color: var(--negro-cafe);
 	border-color: var(--dorado);
-}
-
-/* Tarjetas de igual altura en la sección de productos (solo tab visible #nav-home):
-   la columna y .single-project se estiran a la altura de la fila, .project-cap
-   reparte ese espacio y el botón "Cotizar" queda siempre a 18px del nombre. */
-#nav-home .project-caption .row > div {
-	display: flex;
-	flex-direction: column;
-}
-
-#nav-home .single-project {
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-}
-
-#nav-home .project-cap {
-	display: flex;
-	flex-direction: column;
-	flex: 1;
-}
-
-/* Reserva siempre el alto de 2 líneas (line-height 1.2 x font-size 20px = 24px c/u)
-   para que el nombre del producto ocupe 1 o 2 líneas sin mover el botón */
-#nav-home .project-cap h4 {
-	min-height: 48px;
-}
-
-#nav-home .btn-cotizar-producto {
-	margin-top: 18px;
-	align-self: flex-start;
 }
 
 .project-area .project-caption .single-project .plus-btn,
@@ -2474,24 +2490,6 @@ hr {
 	-ms-transition: all .4s ease-out 0s;
 	-o-transition: all .4s ease-out 0s;
 	transition: all .4s ease-out 0s
-}
-
-.project-area .project-caption .single-project:hover .project-cap,
-.about-area .project-caption .single-project:hover .project-cap,
-.contact-section .project-caption .single-project:hover .project-cap {
-	background: var(--dorado)
-}
-
-.project-area .project-caption .single-project:hover .project-cap h4 a,
-.about-area .project-caption .single-project:hover .project-cap h4 a,
-.contact-section .project-caption .single-project:hover .project-cap h4 a {
-	color: var(--negro-cafe)
-}
-
-.project-area .project-caption .single-project:hover .project-cap h4 i,
-.about-area .project-caption .single-project:hover .project-cap h4 i,
-.contact-section .project-caption .single-project:hover .project-cap h4 i {
-	color: var(--negro-cafe)
 }
 
 .project-area .project-caption .single-project:hover .plus-btn,
@@ -2882,6 +2880,266 @@ hr {
 	color: #D9A429;
 	letter-spacing: 2px;
 	font-weight: 600;
+}
+
+/* ==== Página de catálogo (productos.html) ==== */
+
+/* Link activo del menú principal (solo lo usa productos.html) */
+.main-header .main-menu ul li a.active {
+	color: #fff;
+	box-shadow: inset 0 -3px 0 0 #D9A429;
+}
+
+/* Banner superior. Foto real de madera como <img> (mejor accesibilidad/SEO
+   que un fondo CSS, ya trae su alt) + degradado oscuro propio encima.
+   padding-top igual al usado en .hero__caption del index para que el header
+   transparente (position:absolute) no tape el título. */
+.catalogo-banner {
+	position: relative;
+	min-height: 380px;
+	padding-top: 150px;
+	box-sizing: border-box;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.catalogo-banner__img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.catalogo-banner::before {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(to bottom, rgba(20, 15, 10, 0.65), rgba(20, 15, 10, 0.45));
+}
+
+.catalogo-banner .container {
+	position: relative;
+	z-index: 2;
+}
+
+.catalogo-banner__caption {
+	text-align: center;
+}
+
+.catalogo-banner__caption h1 {
+	color: #fff;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 48px;
+	margin: 0 0 12px 0;
+	text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.catalogo-banner__caption p {
+	color: rgba(255, 255, 255, 0.9);
+	font-size: 18px;
+	max-width: 560px;
+	margin: 0 auto;
+	text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.catalogo-banner {
+		padding-top: 70px;
+	}
+}
+
+@media (max-width: 767px) {
+	.catalogo-banner {
+		min-height: 260px;
+		padding-top: 70px;
+	}
+	.catalogo-banner__caption h1 {
+		font-size: 30px;
+	}
+	.catalogo-banner__caption p {
+		font-size: 15px;
+		padding: 0 10px;
+	}
+}
+
+/* Reduce el padding-top heredado de .section-padding30 (130px) sin tocar esa
+   clase compartida con otras secciones/páginas */
+.catalogo-area.section-padding30 {
+	padding-top: 60px;
+}
+
+@media (max-width: 767px) {
+	.catalogo-area.section-padding30 {
+		padding-top: 40px;
+	}
+}
+
+/* Panel de filtros */
+.catalogo-filtros {
+	background: #fff;
+	border-radius: 12px;
+	padding: 24px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.catalogo-filtros h3 {
+	font-family: "Montserrat", sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	color: #231B10;
+	margin: 0 0 16px 0;
+}
+
+.catalogo-buscador {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px 14px;
+	border: 1px solid #e2d9c8;
+	border-radius: 8px;
+	margin-bottom: 20px;
+	font-size: 15px;
+	font-family: "Montserrat", sans-serif;
+	color: #231B10;
+}
+
+.catalogo-categorias {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.chip-categoria {
+	white-space: nowrap;
+	background: #FAF3E6;
+	border: 1px solid transparent;
+	color: #231B10;
+	font-size: 14px;
+	font-weight: 600;
+	font-family: "Montserrat", sans-serif;
+	padding: 8px 16px;
+	border-radius: 20px;
+	cursor: pointer;
+	text-align: center;
+	line-height: 1.2;
+	transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.chip-categoria:hover {
+	border-color: #D9A429;
+}
+
+.chip-categoria.active {
+	background: #D9A429;
+	color: #231B10;
+	border-color: #D9A429;
+}
+
+/* Barra superior de la cuadrícula */
+.catalogo-toolbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 12px;
+	margin-bottom: 20px;
+}
+
+.catalogo-toolbar p {
+	margin: 0;
+	color: #231B10;
+	font-size: 15px;
+}
+
+.catalogo-orden {
+	padding: 8px 34px 8px 14px;
+	border: 1px solid #e2d9c8;
+	border-radius: 8px;
+	font-size: 14px;
+	font-family: "Montserrat", sans-serif;
+	color: #231B10;
+	background-color: #fff;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23D9A429' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 14px center;
+	background-size: 10px 7px;
+}
+
+/* Etiqueta de categoría sobre el nombre del producto */
+.badge-categoria {
+	display: inline-block;
+	align-self: flex-start;
+	background: rgba(217, 164, 41, 0.15);
+	color: #D9A429;
+	font-size: 11px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	padding: 3px 10px;
+	border-radius: 20px;
+	margin-bottom: 8px;
+}
+
+/* Tarjetas de igual altura en la cuadrícula del catálogo */
+#catalogo-grid .row > div {
+	display: flex;
+	flex-direction: column;
+}
+
+#catalogo-grid .single-project {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+#catalogo-grid .project-cap {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+#catalogo-grid .project-cap h4 {
+	min-height: 48px;
+}
+
+#catalogo-grid .btn-cotizar-producto {
+	margin-top: 18px;
+	align-self: flex-start;
+}
+
+/* Mensaje de "sin resultados" */
+.catalogo-sin-resultados {
+	text-align: center;
+	padding: 40px 20px;
+	color: #231B10;
+	font-size: 16px;
+}
+
+.catalogo-sin-resultados a {
+	color: #D9A429;
+	font-weight: 700;
+	text-decoration: underline;
+}
+
+@media (max-width: 991px) {
+	.catalogo-filtros {
+		margin-bottom: 30px;
+	}
 }
 
 .heading-section.heading-section-white .subheading { color: #D9A429; }

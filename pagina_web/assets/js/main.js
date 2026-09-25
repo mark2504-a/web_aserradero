@@ -155,7 +155,9 @@
 
 
 	/* 6. Nice Selectorp  */
-	var nice_Select = $('select');
+	/* .catalogo-orden (selector de orden del catálogo) queda excluido: tiene su
+	   propio estilo con flecha en CSS y no necesita el widget de nice-select. */
+	var nice_Select = $('select').not('.catalogo-orden');
 	if (nice_Select.length) {
 		nice_Select.niceSelect();
 	}
