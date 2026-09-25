@@ -489,16 +489,18 @@
         <!-- ================ contact section start ================= -->
         <section class="contact-section">
                 <div class="container">
-                    <div class=" d-sm-block mb-5 pb-4">
-                    <div class="map-container">
-                    <iframe src="https://www.google.com/maps?cid=8000592212026267352&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="contact-title" id="contacto">Solicita tu cotización</h2>
+                        <div class="section-tittle mb-15">
+                            <div class="front-text">
+                                <h2 id="contacto">Solicita tu cotización</h2>
+                            </div>
+                        </div>
                         <p class="form-intro">Te respondemos con precio y disponibilidad en horario de atención.</p>
                     </div>
-                    <div class="col-lg-8">
+                </div>
+                <div class="row align-items-start">
+                    <div class="col-lg-7">
                        <form class="form-contact contact_form" action="https://formspree.io/f/mrpgebjz" method="POST" id="contactForm">
                             <input type="hidden" name="_subject" value="Nueva solicitud de cotización - Página web">
                             <div class="row">
@@ -535,19 +537,40 @@
                             </div>
                             <div class="form-group mt-3">
                                 <button type="submit" class="btn-cotizar-submit">Enviar solicitud de cotización</button>
+                                <p class="form-privacidad"><i class="fa-solid fa-lock"></i> Tus datos solo se usan para responder tu cotización. Te contactamos en horario de atención.</p>
                                 <p id="formFeedback" class="form-feedback" role="alert" aria-live="polite"></p>
                             </div>
                         </form>
                     </div>
-                    <div class="col-lg-3 offset-lg-1">
-                        <div class="media contact-info">
-                            <span class="contact-info__icon"><p><i class="fas fa-location-dot"></i>&nbsp;<strong>Ubicación:</strong> Plazuela Ayala, Calle Guatemala local #130, San Salvador</p>
-                        </div>
-                        <div class="media contact-info">
-                            <span class="contact-info__icon"><p><i class="fa-brands fa-whatsapp"></i>&nbsp;<strong>WhatsApp:</strong> 6060-2008</p>
-                        </div>
-                        <div class="media contact-info">
-                            <span class="contact-info__icon"><p><i class="fa-solid fa-envelope"></i>&nbsp;<strong>Correo:</strong> <a href="mailto:aserraderoceibadeoro@msn.com">aserraderoceibadeoro@msn.com</a></p>
+                    <div class="col-lg-5">
+                        <div class="contact-card">
+                            <h3>Visítanos o escríbenos</h3>
+                            <ul class="contact-card__list">
+                                <li>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <span>Plazuela Ayala, Calle Guatemala local #130, San Salvador</span>
+                                </li>
+                                <li>
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                    <a href="https://wa.me/50360602008" target="_blank" rel="noopener noreferrer">6060-2008</a>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <a href="mailto:aserraderoceibadeoro@msn.com">aserraderoceibadeoro@msn.com</a>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-clock"></i>
+                                    <span class="contact-card__horario">
+                                        <span>Lun–Vie 8:00 a.m. – 5:00 p.m.</span>
+                                        <span>Sáb 8:00 a.m. – 1:00 p.m.</span>
+                                        <span>Dom 9:00 a.m. – 1:00 p.m.</span>
+                                    </span>
+                                </li>
+                            </ul>
+                            <div class="contact-card__map">
+                                <iframe src="https://www.google.com/maps?cid=8000592212026267352&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                            <a href="https://www.google.com/maps?cid=8000592212026267352" target="_blank" rel="noopener noreferrer" class="contact-card__btn">Cómo llegar</a>
                         </div>
                     </div>
                 </div>

@@ -1208,6 +1208,16 @@ hr {
 	font-size: 15px;
 }
 
+.form-privacidad {
+	margin-top: 14px;
+	font-size: 14px;
+	color: rgba(26, 20, 11, 0.65);
+}
+
+.form-privacidad i {
+	color: #D9A429;
+}
+
 .form-feedback.is-error {
 	color: #b02a37;
 }
@@ -3152,6 +3162,113 @@ hr {
 /* ---- Map & Contact ---- */
 #contacto {
 	scroll-margin-top: 100px;
+	font-family: "Poppins", sans-serif;
+}
+
+.contact-section {
+	padding: 90px 0;
+}
+
+@media (max-width: 767px) {
+	.contact-section {
+		padding: 60px 0;
+	}
+}
+
+/* Tarjeta de contacto (formulario + tarjeta, sustituye el mapa suelto de arriba) */
+.contact-card {
+	background: #231B10;
+	border-radius: 16px;
+	padding: 32px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.contact-card h3 {
+	color: #fff;
+	font-size: 22px;
+	font-weight: 700;
+	margin: 0 0 20px 0;
+}
+
+.contact-card__list {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 24px 0;
+}
+
+.contact-card__list li {
+	display: flex;
+	align-items: flex-start;
+	gap: 14px;
+	color: rgba(255, 255, 255, 0.85);
+	font-size: 15px;
+	line-height: 1.5;
+}
+
+.contact-card__list li + li {
+	margin-top: 16px;
+}
+
+.contact-card__list i {
+	flex-shrink: 0;
+	width: 20px;
+	text-align: center;
+	margin-top: 2px;
+	color: #D9A429;
+	font-size: 18px;
+}
+
+.contact-card__list a {
+	color: #fff;
+	text-decoration: none;
+	transition: color .3s ease-out 0s;
+}
+
+.contact-card__list a:hover {
+	color: #D9A429;
+}
+
+.contact-card__horario {
+	display: block;
+}
+
+.contact-card__horario span {
+	display: block;
+}
+
+.contact-card__map {
+	border-radius: 12px;
+	overflow: hidden;
+	margin-bottom: 24px;
+}
+
+.contact-card__map iframe {
+	display: block;
+	width: 100%;
+	height: 240px;
+	border: 0;
+}
+
+.contact-card__btn {
+	display: inline-block;
+	width: 100%;
+	box-sizing: border-box;
+	text-align: center;
+	background: transparent;
+	color: #D9A429;
+	border: 1.5px solid #D9A429;
+	border-radius: 50px;
+	padding: 12px 24px;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 700;
+	font-size: 15px;
+	text-decoration: none;
+	transition: background-color .3s ease-out 0s, color .3s ease-out 0s;
+}
+
+.contact-card__btn:hover {
+	background: #D9A429;
+	color: #231B10;
 }
 
 .map-container {
