@@ -1120,6 +1120,10 @@ hr {
 	padding: 60px 0;
 }
 
+#catalogo {
+	scroll-margin-top: 100px;
+}
+
 .catalogo-cta__inner {
 	display: flex;
 	align-items: center;
@@ -2834,6 +2838,12 @@ hr {
 	font-family: "Montserrat", sans-serif;
 	font-size: 40px;
 	font-weight: 800;
+	line-height: 1.1;
+}
+
+.experiencia-counter__icono {
+	color: #D9A429;
+	font-size: 40px;
 	line-height: 1.1;
 }
 
