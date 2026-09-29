@@ -1346,6 +1346,201 @@ hr {
 	margin: 0;
 }
 
+/* ---- Sostenibilidad (paneles solares) ---- */
+#sostenibilidad {
+	background-color: var(--crema);
+	padding-top: 110px;
+	padding-bottom: 90px;
+}
+
+#sostenibilidad .section-tittle .front-text h2 {
+	font-family: "Poppins", sans-serif;
+	font-size: 40px;
+	line-height: 1.15;
+}
+
+#sostenibilidad .sostenibilidad-row {
+	--bs-gutter-x: 60px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	#sostenibilidad .section-tittle .front-text h2 {
+		font-size: 36px;
+	}
+}
+
+@media (max-width: 767px) {
+	#sostenibilidad {
+		padding-top: 70px;
+		padding-bottom: 60px;
+	}
+	#sostenibilidad .section-tittle .front-text h2 {
+		font-size: 28px;
+	}
+}
+
+.sostenibilidad-eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	color: #D9A429;
+	font-family: 'Figtree', sans-serif;
+	font-size: 15px;
+	font-weight: 500;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	margin-bottom: 16px;
+}
+
+.sostenibilidad-eyebrow::before {
+	content: "";
+	width: 40px;
+	height: 2px;
+	flex: 0 0 auto;
+	background: #D9A429;
+}
+
+@media (max-width: 767px) {
+	.sostenibilidad-eyebrow { font-size: 12px; }
+	.sostenibilidad-eyebrow::before { width: 30px; }
+}
+
+.sostenibilidad-texto {
+	color: rgba(35, 27, 16, 0.8);
+	font-size: 17px;
+	line-height: 1.7;
+	max-width: 520px;
+	margin-bottom: 26px;
+}
+
+.sostenibilidad-puntos {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 0;
+	margin: 0;
+}
+
+.sostenibilidad-puntos li {
+	display: flex;
+	align-items: flex-start;
+	gap: 16px;
+}
+
+.sostenibilidad-punto__icono {
+	flex-shrink: 0;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	background: rgba(217, 164, 41, 0.15);
+	color: #D9A429;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+}
+
+.sostenibilidad-punto__texto {
+	color: #231B10;
+	font-size: 15px;
+	line-height: 1.5;
+}
+
+.sostenibilidad-punto__texto strong {
+	display: block;
+	font-size: 16px;
+	margin-bottom: 2px;
+}
+
+.sostenibilidad-punto__desc {
+	display: block;
+	color: rgba(26, 20, 11, 0.75);
+}
+
+.sostenibilidad-cierre {
+	border-top: 1px solid rgba(217, 164, 41, 0.4);
+	padding-top: 20px;
+	margin-top: 26px;
+}
+
+.sostenibilidad-cierre p {
+	font-style: italic;
+	font-size: 16px;
+	color: rgba(35, 27, 16, 0.7);
+	margin: 0;
+}
+
+/* Collage de fotos */
+.sostenibilidad-collage {
+	position: relative;
+	margin-bottom: 50px;
+}
+
+.sostenibilidad-collage__marco {
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.sostenibilidad-collage__grande {
+	width: 100%;
+	display: block;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	transition: transform 0.4s ease;
+}
+
+.sostenibilidad-collage:hover .sostenibilidad-collage__grande {
+	transform: scale(1.03);
+}
+
+.sostenibilidad-collage__pequena {
+	position: absolute;
+	right: 0;
+	bottom: -30px;
+	width: 42%;
+	aspect-ratio: 4 / 3;
+	object-fit: cover;
+	border: 6px solid #fff;
+	border-radius: 12px;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.sostenibilidad-sello {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	z-index: 3;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	background: #231B10;
+	border: 1px solid #D9A429;
+	border-radius: 8px;
+	padding: 12px 18px;
+}
+
+.sostenibilidad-sello i {
+	color: #D9A429;
+	font-size: 14px;
+}
+
+.sostenibilidad-sello span {
+	color: #fff;
+	font-size: 13px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	line-height: 1;
+}
+
+@media (max-width: 767px) {
+	.sostenibilidad-collage__pequena {
+		display: none;
+	}
+}
+
 @media (max-width: 575px) {
 	.section-tittle .front-text h2 { font-size: 34px; line-height: 1.4 }
 }
