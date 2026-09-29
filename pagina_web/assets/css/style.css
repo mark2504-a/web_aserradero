@@ -3783,6 +3783,95 @@ hr {
 	align-self: flex-start;
 }
 
+/* ---- Panel de información al pasar el mouse / tocar la foto ---- */
+#catalogo-grid .single-project.tiene-info-panel .project-img {
+	position: relative;
+}
+
+#catalogo-grid .single-project.tiene-info-panel:hover .project-img img {
+	transform: scale(1.06);
+	transition: transform 0.4s ease-out;
+}
+
+#catalogo-grid .producto-info-panel {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: auto;
+	max-height: 55%;
+	overflow: hidden;
+	background: linear-gradient(to top, rgba(35, 27, 16, 0.95), rgba(35, 27, 16, 0.75));
+	border-top: 1px solid rgba(217, 164, 41, 0.4);
+	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3px);
+	padding: 18px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	transform: translateY(100%);
+	opacity: 0;
+	transition: transform 0.35s ease, opacity 0.35s ease;
+	pointer-events: none;
+	z-index: 2;
+}
+
+#catalogo-grid .single-project.tiene-info-panel:hover .producto-info-panel,
+#catalogo-grid .project-img.mostrar-info .producto-info-panel {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+#catalogo-grid .producto-info-panel .info-linea {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+#catalogo-grid .producto-info-panel .info-linea i {
+	flex: 0 0 18px;
+	margin-top: 3px;
+	text-align: center;
+	color: #D9A429;
+}
+
+#catalogo-grid .producto-info-panel .info-texto {
+	flex: 1;
+}
+
+#catalogo-grid .producto-info-panel .info-texto strong {
+	color: #D9A429;
+	font-weight: 700;
+	margin-right: 4px;
+}
+
+#catalogo-grid .producto-info-medida .valor {
+	color: #fff;
+}
+
+#catalogo-grid .producto-info-uso .valor {
+	color: rgba(255, 255, 255, 0.85);
+}
+
+#catalogo-grid .producto-info-toggle {
+	display: none;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 3;
+	color: #D9A429;
+	font-size: 20px;
+	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+@media (hover: none) {
+	#catalogo-grid .producto-info-toggle {
+		display: block;
+	}
+}
+
 /* Mensaje de "sin resultados" */
 .catalogo-sin-resultados {
 	text-align: center;

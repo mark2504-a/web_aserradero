@@ -92,4 +92,46 @@
     }
 
     aplicarFiltro();
+
+    // ---- Panel de información al pasar el mouse / tocar la foto ----
+    // Reutilizable: para agregar el panel a otro producto, solo agrega
+    // data-medida="..." y data-uso="..." a su div de tarjeta (el mismo
+    // que ya tiene data-categoria y data-nombre). Si un producto no tiene
+    // esos atributos, se comporta como antes (sin panel).
+    function escaparHtml(texto) {
+        var div = document.createElement('div');
+        div.textContent = texto;
+        return div.innerHTML;
+    }
+
+    var esTactil = window.matchMedia('(hover: none)').matches;
+
+    items.forEach(function (item) {
+        var medida = item.getAttribute('data-medida');
+        var uso = item.getAttribute('data-uso');
+        if (!medida || !uso) return;
+
+        var singleProject = item.querySelector('.single-project');
+        var projectImg = item.querySelector('.project-img');
+        if (!singleProject || !projectImg) return;
+
+        singleProject.classList.add('tiene-info-panel');
+
+        var panel = document.createElement('div');
+        panel.className = 'producto-info-panel';
+        panel.innerHTML =
+            '<div class="info-linea producto-info-medida"><i class="fa-solid fa-ruler"></i><span class="info-texto"><strong>Medida:</strong> <span class="valor">' + escaparHtml(medida) + '</span></span></div>' +
+            '<div class="info-linea producto-info-uso"><i class="fa-solid fa-circle-check"></i><span class="info-texto"><strong>Ideal para:</strong> <span class="valor">' + escaparHtml(uso) + '</span></span></div>';
+        projectImg.appendChild(panel);
+
+        var toggleIcon = document.createElement('i');
+        toggleIcon.className = 'fa-solid fa-circle-info producto-info-toggle';
+        projectImg.appendChild(toggleIcon);
+
+        if (esTactil) {
+            projectImg.addEventListener('click', function () {
+                projectImg.classList.toggle('mostrar-info');
+            });
+        }
+    });
 })();
