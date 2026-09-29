@@ -96,8 +96,9 @@
     // ---- Panel de información al pasar el mouse / tocar la foto ----
     // Reutilizable: para agregar el panel a otro producto, solo agrega
     // data-medida="..." y data-uso="..." a su div de tarjeta (el mismo
-    // que ya tiene data-categoria y data-nombre). Si un producto no tiene
-    // esos atributos, se comporta como antes (sin panel).
+    // que ya tiene data-categoria y data-nombre). data-calidad="..." es
+    // opcional y se muestra entre Medida e Ideal para. Si un producto no
+    // tiene data-medida/data-uso, se comporta como antes (sin panel).
     function escaparHtml(texto) {
         var div = document.createElement('div');
         div.textContent = texto;
@@ -108,6 +109,7 @@
 
     items.forEach(function (item) {
         var medida = item.getAttribute('data-medida');
+        var calidad = item.getAttribute('data-calidad');
         var uso = item.getAttribute('data-uso');
         if (!medida || !uso) return;
 
@@ -119,9 +121,13 @@
 
         var panel = document.createElement('div');
         panel.className = 'producto-info-panel';
-        panel.innerHTML =
-            '<div class="info-linea producto-info-medida"><i class="fa-solid fa-ruler"></i><span class="info-texto"><strong>Medida:</strong> <span class="valor">' + escaparHtml(medida) + '</span></span></div>' +
-            '<div class="info-linea producto-info-uso"><i class="fa-solid fa-circle-check"></i><span class="info-texto"><strong>Ideal para:</strong> <span class="valor">' + escaparHtml(uso) + '</span></span></div>';
+        var panelHtml =
+            '<div class="info-linea producto-info-medida"><i class="fa-solid fa-ruler"></i><span class="info-texto"><strong>Medida:</strong> <span class="valor">' + medida + '</span></span></div>';
+        if (calidad) {
+            panelHtml += '<div class="info-linea producto-info-calidad"><i class="fa-solid fa-award"></i><span class="info-texto"><strong>Calidad:</strong> <span class="valor">' + escaparHtml(calidad) + '</span></span></div>';
+        }
+        panelHtml += '<div class="info-linea producto-info-uso"><i class="fa-solid fa-circle-check"></i><span class="info-texto"><strong>Ideal para:</strong> <span class="valor">' + escaparHtml(uso) + '</span></span></div>';
+        panel.innerHTML = panelHtml;
         projectImg.appendChild(panel);
 
         var toggleIcon = document.createElement('i');

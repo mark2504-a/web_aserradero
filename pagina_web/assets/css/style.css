@@ -3799,15 +3799,15 @@ hr {
 	right: 0;
 	bottom: 0;
 	height: auto;
-	max-height: 85%;
+	max-height: 100%;
 	background: linear-gradient(to top, rgba(35, 27, 16, 0.95), rgba(35, 27, 16, 0.75));
 	border-top: 1px solid rgba(217, 164, 41, 0.4);
 	backdrop-filter: blur(3px);
 	-webkit-backdrop-filter: blur(3px);
-	padding: 18px;
+	padding: 14px;
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
+	gap: 6px;
 	transform: translateY(100%);
 	opacity: 0;
 	transition: transform 0.35s ease, opacity 0.35s ease;
@@ -3825,8 +3825,8 @@ hr {
 	display: flex;
 	align-items: flex-start;
 	gap: 8px;
-	font-size: 14px;
-	line-height: 1.5;
+	font-size: 13.5px;
+	line-height: 1.4;
 }
 
 #catalogo-grid .producto-info-panel .info-linea i {
@@ -3847,6 +3847,10 @@ hr {
 }
 
 #catalogo-grid .producto-info-medida .valor {
+	color: #fff;
+}
+
+#catalogo-grid .producto-info-calidad .valor {
 	color: #fff;
 }
 
