@@ -1108,6 +1108,12 @@ hr {
 	background-color: #D9A429;
 }
 
+/* Título centrado (.section-tittle.text-center): la línea dorada se centra con el texto */
+.section-tittle.text-center .front-text h2::after {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
 /* Franja de invitación al catálogo (reemplaza la sección de productos en index.html) */
 .catalogo-cta {
 	background: #231B10;
@@ -3414,6 +3420,16 @@ hr {
 	}
 }
 
+.catalogo-banner--servicio {
+	min-height: 460px;
+}
+
+@media (max-width: 767px) {
+	.catalogo-banner--servicio {
+		min-height: 380px;
+	}
+}
+
 /* Reduce el padding-top heredado de .section-padding30 (130px) sin tocar esa
    clase compartida con otras secciones/páginas */
 .catalogo-area.section-padding30 {
@@ -3580,6 +3596,263 @@ hr {
 	.catalogo-filtros {
 		margin-bottom: 30px;
 	}
+}
+
+/* ==== Páginas de detalle de servicio (servicio-*.html) ==== */
+
+/* Ruta de migas dentro del banner */
+.servicio-breadcrumb {
+	color: rgba(255, 255, 255, 0.75);
+	font-size: 14px;
+	margin-top: 40px;
+	margin-bottom: 14px;
+}
+
+.servicio-breadcrumb a {
+	color: rgba(255, 255, 255, 0.85);
+	text-decoration: none;
+}
+
+.servicio-breadcrumb a:hover {
+	color: #D9A429;
+}
+
+.servicio-breadcrumb span {
+	margin: 0 6px;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.catalogo-banner__caption .btn-cotizar-submit {
+	margin-top: 28px;
+	margin-bottom: 60px;
+}
+
+/* "¿En qué consiste?": texto + foto, mismo criterio que #sobre en index.html */
+.servicio-info {
+	padding: 90px 0;
+}
+
+.servicio-img {
+	width: 100%;
+	border-radius: 12px;
+	aspect-ratio: 1200 / 750;
+	object-fit: cover;
+}
+
+.servicio-checklist {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	padding: 0;
+	margin: 20px 0 28px 0;
+}
+
+.servicio-checklist li {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	color: #231B10;
+	font-size: 16px;
+}
+
+.servicio-checklist i {
+	flex-shrink: 0;
+	color: #D9A429;
+	font-size: 18px;
+}
+
+/* "Cómo funciona": pasos numerados */
+.servicio-proceso {
+	background: #FAF3E6;
+	padding: 90px 0;
+}
+
+.servicio-pasos {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 24px;
+}
+
+@media (max-width: 991px) {
+	.servicio-pasos {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 767px) {
+	.servicio-pasos {
+		grid-template-columns: 1fr;
+	}
+}
+
+.servicio-paso {
+	background: #fff;
+	border-left: 4px solid #D9A429;
+	border-radius: 12px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+	padding: 28px;
+}
+
+.servicio-paso__numero {
+	display: block;
+	color: #D9A429;
+	font-family: "Montserrat", sans-serif;
+	font-size: 36px;
+	font-weight: 800;
+	line-height: 1;
+	margin-bottom: 12px;
+}
+
+.servicio-paso h4 {
+	color: #231B10;
+	font-size: 18px;
+	font-weight: 700;
+	margin: 0 0 8px 0;
+}
+
+.servicio-paso p {
+	color: rgba(26, 20, 11, 0.75);
+	font-size: 15px;
+	line-height: 1.5;
+	margin: 0;
+}
+
+/* "Qué trabajamos": grupos de chips reutilizando .catalogo-categorias/.chip-categoria */
+.servicio-chips {
+	padding: 90px 0;
+}
+
+.servicio-chips__grupo {
+	margin-bottom: 30px;
+}
+
+.servicio-chips__grupo h4 {
+	color: #231B10;
+	font-size: 17px;
+	font-weight: 700;
+	margin: 0 0 14px 0;
+}
+
+.servicio-chips .chip-categoria {
+	cursor: default;
+}
+
+.servicio-link-secondary {
+	display: inline-block;
+	margin-top: 10px;
+	color: #231B10;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 700;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+	transition: color .3s ease, border-color .3s ease;
+}
+
+.servicio-link-secondary:hover {
+	color: #D9A429;
+	border-color: #D9A429;
+}
+
+/* Franja oscura de beneficios, mismo estilo que las tarjetas de "Nuestros Valores" */
+.beneficios-oscuros {
+	background-color: #231B10;
+	padding: 90px 0 50px 0;
+}
+
+.beneficios-oscuros .section-tittle {
+	margin-bottom: 50px;
+}
+
+.beneficios-oscuros .section-tittle .front-text h2 {
+	color: #fff;
+}
+
+.beneficios-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+}
+
+@media (max-width: 767px) {
+	.beneficios-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.beneficio-card {
+	background: rgba(255, 255, 255, 0.04);
+	border: 1px solid rgba(217, 164, 41, 0.25);
+	border-radius: 12px;
+	padding: 28px;
+	transition: transform .3s ease-out 0s, border-color .3s ease-out 0s;
+}
+
+.beneficio-card:hover {
+	border-color: #D9A429;
+	transform: translateY(-4px);
+}
+
+.beneficio-card__icono {
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
+	background: rgba(217, 164, 41, 0.12);
+	color: #D9A429;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 22px;
+	margin-bottom: 18px;
+}
+
+.beneficio-card h4 {
+	color: #fff;
+	font-size: 20px;
+	font-weight: 700;
+	margin: 0 0 10px 0;
+}
+
+.beneficio-card p {
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 16px;
+	line-height: 1.6;
+	margin: 0;
+}
+
+@media (max-width: 767px) {
+	.servicio-info,
+	.servicio-proceso,
+	.servicio-chips {
+		padding: 60px 0;
+	}
+	.beneficios-oscuros {
+		padding: 60px 0 30px 0;
+	}
+	.beneficios-oscuros .section-tittle {
+		margin-bottom: 30px;
+	}
+}
+
+/* Llamado final en dorado (usado en el CTA de cierre de las páginas de servicio) */
+.catalogo-cta.cta-dorada {
+	background: #D9A429;
+}
+
+.catalogo-cta.cta-dorada .catalogo-cta__texto h3,
+.catalogo-cta.cta-dorada .catalogo-cta__texto p {
+	color: #231B10;
+}
+
+.catalogo-cta.cta-dorada .btn-cotizar-submit {
+	background: #231B10;
+	color: #D9A429;
+	box-shadow: none;
+}
+
+.catalogo-cta.cta-dorada .btn-cotizar-submit:hover {
+	background: #1A140B;
+	color: #fff;
 }
 
 .heading-section.heading-section-white .subheading { color: #D9A429; }
