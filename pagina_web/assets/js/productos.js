@@ -94,11 +94,13 @@
     aplicarFiltro();
 
     // ---- Panel de información al pasar el mouse / tocar la foto ----
-    // Reutilizable: para agregar el panel a otro producto, solo agrega
-    // data-medida="..." y data-uso="..." a su div de tarjeta (el mismo
-    // que ya tiene data-categoria y data-nombre). data-calidad="..." es
-    // opcional y se muestra entre Medida e Ideal para. Si un producto no
-    // tiene data-medida/data-uso, se comporta como antes (sin panel).
+    // Reutilizable: para agregar el panel a otro producto, agrega
+    // data-medida, data-calidad y/o data-uso a su div de tarjeta (el
+    // mismo que ya tiene data-categoria y data-nombre). Los tres son
+    // independientes: si falta alguno, simplemente no se muestra esa
+    // línea. El panel solo se activa si hay al menos data-calidad o
+    // data-uso (data-medida por sí sola no activa el panel). Si un
+    // producto no tiene ninguno, se comporta como antes (sin panel).
     function escaparHtml(texto) {
         var div = document.createElement('div');
         div.textContent = texto;
@@ -111,7 +113,7 @@
         var medida = item.getAttribute('data-medida');
         var calidad = item.getAttribute('data-calidad');
         var uso = item.getAttribute('data-uso');
-        if (!medida || !uso) return;
+        if (!calidad && !uso) return;
 
         var singleProject = item.querySelector('.single-project');
         var projectImg = item.querySelector('.project-img');
@@ -121,12 +123,16 @@
 
         var panel = document.createElement('div');
         panel.className = 'producto-info-panel';
-        var panelHtml =
-            '<div class="info-linea producto-info-medida"><i class="fa-solid fa-ruler"></i><span class="info-texto"><strong>Medida:</strong> <span class="valor">' + medida + '</span></span></div>';
+        var panelHtml = '';
+        if (medida) {
+            panelHtml += '<div class="info-linea producto-info-medida"><i class="fa-solid fa-ruler"></i><span class="info-texto"><strong>Medida:</strong> <span class="valor">' + medida + '</span></span></div>';
+        }
         if (calidad) {
             panelHtml += '<div class="info-linea producto-info-calidad"><i class="fa-solid fa-award"></i><span class="info-texto"><strong>Calidad:</strong> <span class="valor">' + escaparHtml(calidad) + '</span></span></div>';
         }
-        panelHtml += '<div class="info-linea producto-info-uso"><i class="fa-solid fa-circle-check"></i><span class="info-texto"><strong>Ideal para:</strong> <span class="valor">' + escaparHtml(uso) + '</span></span></div>';
+        if (uso) {
+            panelHtml += '<div class="info-linea producto-info-uso"><i class="fa-solid fa-circle-check"></i><span class="info-texto"><strong>Ideal para:</strong> <span class="valor">' + escaparHtml(uso) + '</span></span></div>';
+        }
         panel.innerHTML = panelHtml;
         projectImg.appendChild(panel);
 

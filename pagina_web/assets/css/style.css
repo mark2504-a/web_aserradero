@@ -3783,6 +3783,38 @@ hr {
 	align-self: flex-start;
 }
 
+/* ---- Placeholder de imagen provisional (producto sin foto todavía) ---- */
+#catalogo-grid .producto-img-placeholder {
+	width: 100%;
+	aspect-ratio: 4 / 3;
+	background: #2A2014;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	transition: transform 0.3s ease-out 0s;
+}
+
+#catalogo-grid .producto-img-placeholder i {
+	color: #D9A429;
+	font-size: 56px;
+}
+
+#catalogo-grid .producto-img-placeholder span {
+	color: rgba(255, 255, 255, 0.6);
+	font-size: 14px;
+}
+
+#catalogo-grid .single-project:hover .project-img .producto-img-placeholder {
+	transform: scale(1.05);
+}
+
+#catalogo-grid .single-project.tiene-info-panel:hover .project-img .producto-img-placeholder {
+	transform: scale(1.06);
+	transition: transform 0.4s ease-out;
+}
+
 /* ---- Panel de información al pasar el mouse / tocar la foto ---- */
 #catalogo-grid .single-project.tiene-info-panel .project-img {
 	position: relative;
