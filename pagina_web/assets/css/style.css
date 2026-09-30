@@ -2814,7 +2814,7 @@ hr {
 	align-items: stretch;
 	justify-content: center;
 	flex-wrap: wrap;
-	margin-top: 50px;
+	margin-top: 10px;
 	padding-top: 40px;
 	border-top: 1px solid rgba(217, 164, 41, 0.25);
 }
@@ -2856,7 +2856,7 @@ hr {
 @media (max-width: 767px) {
 	.experiencia-counters {
 		flex-direction: column;
-		margin-top: 30px;
+		margin-top: 0;
 		padding-top: 0;
 		border-top: none;
 	}
@@ -3170,21 +3170,7 @@ hr {
 	z-index: 0;
 	padding-top: 70px;
 	padding-bottom: 70px;
-	background-size: cover;
-	background-repeat: no-repeat
-}
-
-.contact-with-area::before {
-	position: absolute;
-	content: "";
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	z-index: -1;
-	background-color: rgba(35, 27, 16, 0.85);
+	background: linear-gradient(135deg, #231B10 0%, #2A2014 100%)
 }
 
 @media (max-width: 767px) {
@@ -3194,7 +3180,7 @@ hr {
 .contact-with-area .contact-us-caption p {
 	color: #fff;
 	padding-top: 20px;
-	padding-bottom: 20px;
+	padding-bottom: 10px;
 	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45)
 }
 
