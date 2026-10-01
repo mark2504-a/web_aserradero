@@ -3644,16 +3644,10 @@ hr {
 	}
 }
 
-/* Overlay de marca solo para el banner de servicio-cepillado.html */
-.catalogo-banner--cepillado::before {
+/* Overlay de marca para los banners de servicio-cepillado.html y servicio-corte-a-medida.html */
+.catalogo-banner--cepillado::before,
+.catalogo-banner--corte::before {
 	background-image: linear-gradient(rgba(35, 27, 16, 0.70), rgba(35, 27, 16, 0.80));
-}
-
-/* Banner de servicio-corte-a-medida.html: foto y overlay van en su style="" en línea,
-   así que aquí se quita el overlay heredado de .catalogo-banner::before */
-.catalogo-banner--corte::before,
-.catalogo-banner--corte::after {
-	content: none;
 }
 
 /* Reduce el padding-top heredado de .section-padding30 (130px) sin tocar esa
