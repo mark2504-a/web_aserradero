@@ -1112,7 +1112,6 @@ hr {
 	position: relative;
 	background: linear-gradient(135deg, #231B10 0%, #2A2014 100%);
 	padding: 100px 0;
-	border-bottom: 1px solid rgba(217, 164, 41, 0.15); /* separa de la franja del catálogo */
 	overflow: hidden;
 }
 
@@ -1391,6 +1390,43 @@ hr {
 	.catalogo-cta__inner {
 		flex-direction: column;
 		align-items: flex-start;
+	}
+}
+
+/* Banner "Conoce nuestro catálogo" de index.html: foto de madera de fondo.
+   Va con #catalogo para no afectar las franjas .catalogo-cta de las páginas de servicio. */
+#catalogo.catalogo-cta {
+	background:
+		linear-gradient(90deg, rgba(35, 27, 16, 0.95) 0%, rgba(35, 27, 16, 0.80) 60%, rgba(35, 27, 16, 0.55) 100%),
+		url("../img/Productos/tabla-pino-nuevo.jpg") center 60% / cover no-repeat,
+		#231B10;
+	padding: 80px 0;
+	border-top: 1px solid rgba(217, 164, 41, 0.3);
+	border-bottom: 1px solid rgba(217, 164, 41, 0.3);
+}
+
+.catalogo-cta__eyebrow {
+	display: block;
+	color: #D9A429;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+#catalogo .btn-cotizar-submit:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 26px rgba(217, 164, 41, 0.6);
+}
+
+@media (max-width: 767px) {
+	#catalogo.catalogo-cta {
+		padding: 60px 0;
+	}
+	#catalogo .catalogo-cta__inner {
+		align-items: center;
+		text-align: center;
 	}
 }
 
