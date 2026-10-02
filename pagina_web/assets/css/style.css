@@ -1102,6 +1102,256 @@ hr {
 	transform: translateX(-50%);
 }
 
+/* ---- Video del taller ---- */
+/* Servicios cierra con menos relleno para que la franja crema no se vea como una línea suelta */
+#servicios {
+	padding-bottom: 40px;
+}
+
+.video-taller {
+	position: relative;
+	background: linear-gradient(135deg, #231B10 0%, #2A2014 100%);
+	padding: 100px 0;
+	border-bottom: 1px solid rgba(217, 164, 41, 0.15); /* separa de la franja del catálogo */
+	overflow: hidden;
+}
+
+/* Desktop: video a la izquierda (ocupa 2 filas), texto a la derecha */
+.video-taller__grid {
+	display: grid;
+	grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+	grid-template-areas:
+		"media intro"
+		"media detalle";
+	column-gap: 70px;
+	align-items: center;
+	align-content: center;
+}
+
+.video-taller__media   { grid-area: media; }
+.video-taller__intro   { grid-area: intro; align-self: end; }
+.video-taller__detalle { grid-area: detalle; align-self: start; }
+
+/* Marco del video con resplandor dorado detrás */
+.video-taller__marco {
+	position: relative;
+	width: 100%;
+	max-width: 340px;
+	margin: 0 auto;
+	aspect-ratio: 9 / 16;
+	border-radius: 18px;
+	border: 1px solid rgba(217, 164, 41, 0.35);
+	box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+	background: #1A140B;
+	isolation: isolate;
+}
+
+.video-taller__marco::before {
+	content: "";
+	position: absolute;
+	inset: 8% -12%;
+	z-index: -1;
+	border-radius: 50%;
+	background: radial-gradient(closest-side, rgba(217, 164, 41, 0.5), rgba(217, 164, 41, 0));
+	filter: blur(40px);
+	pointer-events: none;
+}
+
+.video-taller__marco video {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 17px;
+	background: #1A140B;
+}
+
+/* Etiqueta "En vivo desde el taller" */
+.video-taller__etiqueta {
+	position: absolute;
+	top: 14px;
+	left: 14px;
+	z-index: 2;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 12px;
+	border-radius: 999px;
+	background: rgba(26, 20, 11, 0.65);
+	-webkit-backdrop-filter: blur(4px);
+	backdrop-filter: blur(4px);
+	color: #fff;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.3px;
+	pointer-events: none;
+}
+
+.video-taller__punto {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #D9A429;
+	box-shadow: 0 0 0 3px rgba(217, 164, 41, 0.25);
+}
+
+/* Texto */
+.video-taller__eyebrow {
+	display: block;
+	color: #D9A429;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	margin-bottom: 14px;
+}
+
+.video-taller .section-tittle {
+	margin-bottom: 24px;
+}
+
+.video-taller .section-tittle .front-text h2 {
+	color: #fff;
+	font-size: 46px;
+}
+
+.video-taller__parrafo {
+	color: rgba(255, 255, 255, 0.78);
+	font-size: 17px;
+	line-height: 1.7;
+	margin: 0 0 28px 0;
+}
+
+.video-taller__lista {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 30px 0;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.video-taller__lista li {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	color: rgba(255, 255, 255, 0.88);
+	font-size: 17px;
+}
+
+.video-taller__lista i {
+	flex-shrink: 0;
+	color: #D9A429;
+	font-size: 19px;
+}
+
+/* Fila de 3 datos separados por líneas finas doradas */
+.video-taller__datos {
+	display: flex;
+	margin: 0 0 34px 0;
+}
+
+.video-taller__dato {
+	flex: 1;
+	padding: 4px 22px;
+	border-left: 1px solid rgba(217, 164, 41, 0.35);
+}
+
+.video-taller__dato:first-child {
+	padding-left: 0;
+	border-left: none;
+}
+
+.video-taller__dato strong {
+	display: block;
+	color: #D9A429;
+	font-size: 20px;
+	font-weight: 800;
+	line-height: 1.2;
+}
+
+.video-taller__dato span {
+	display: block;
+	margin-top: 4px;
+	color: rgba(255, 255, 255, 0.6);
+	font-size: 13px;
+}
+
+/* Animación de entrada (solo el texto). Se activa cuando el JS agrega .js-anim a la sección,
+   así que sin JS el texto se ve normal. */
+.video-taller.js-anim .video-taller__anim {
+	opacity: 0;
+	transform: translateY(24px);
+	transition: opacity .7s ease-out, transform .7s ease-out;
+}
+
+.video-taller.js-anim .video-taller__detalle {
+	transition-delay: .15s;
+}
+
+.video-taller.js-anim .video-taller__anim.visible {
+	opacity: 1;
+	transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.video-taller.js-anim .video-taller__anim {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}
+
+/* Tablet y celular: una sola columna — título y párrafo, video, luego lista, datos y botón */
+@media (max-width: 991px) {
+	.video-taller {
+		padding: 80px 0;
+	}
+	.video-taller__grid {
+		grid-template-columns: minmax(0, 1fr);
+		grid-template-areas:
+			"intro"
+			"media"
+			"detalle";
+		row-gap: 40px;
+	}
+	.video-taller__intro,
+	.video-taller__detalle {
+		align-self: auto;
+	}
+	.video-taller__parrafo {
+		margin-bottom: 0;
+	}
+}
+
+@media (max-width: 767px) {
+	#servicios {
+		padding-bottom: 30px;
+	}
+	.video-taller {
+		padding: 60px 0;
+	}
+	.video-taller__grid {
+		row-gap: 32px;
+	}
+	.video-taller .section-tittle .front-text h2 {
+		font-size: 32px;
+	}
+	.video-taller__parrafo,
+	.video-taller__lista li {
+		font-size: 16px;
+	}
+	.video-taller__dato {
+		padding: 4px 12px;
+	}
+	.video-taller__dato strong {
+		font-size: 16px;
+	}
+	.video-taller__dato span {
+		font-size: 12px;
+	}
+}
+
 /* Franja de invitación al catálogo (reemplaza la sección de productos en index.html) */
 .catalogo-cta {
 	background: #231B10;

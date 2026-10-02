@@ -300,13 +300,64 @@
         </section>
         <!--Services Area End-->
 
+        <!-- Video del taller Start -->
+        <section class="video-taller" id="video-taller">
+            <div class="container">
+                <div class="video-taller__grid">
+                    <!-- Columna izquierda: video -->
+                    <div class="video-taller__media">
+                        <div class="video-taller__marco">
+                            <span class="video-taller__etiqueta"><span class="video-taller__punto"></span> Desde nuestro taller</span>
+                            <video src="assets/img/video-taller/video.mp4?v=2" autoplay muted loop playsinline controls preload="auto" title="Video del Aserradero La Ceiba de Oro"></video>
+                        </div>
+                    </div>
+
+                    <!-- Columna derecha (arriba): encabezado -->
+                    <div class="video-taller__intro video-taller__anim">
+                        <span class="video-taller__eyebrow">Nuestro taller</span>
+                        <div class="section-tittle">
+                            <div class="front-text">
+                                <h2>Conoce nuestro taller</h2>
+                            </div>
+                        </div>
+                        <p class="video-taller__parrafo">Desde 1997 trabajamos la madera con maquinaria propia y personal con experiencia en San Salvador. Cortamos y cepillamos a la medida exacta que tu proyecto necesita.</p>
+                    </div>
+
+                    <!-- Columna derecha (abajo): lista, datos y botón -->
+                    <div class="video-taller__detalle video-taller__anim">
+                        <ul class="video-taller__lista">
+                            <li><i class="fa-solid fa-circle-check"></i> Corte a medida en nuestro propio taller</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Cepillado profesional, listo para tu acabado</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Madera seleccionada: pino, cedro, conacaste y plywood</li>
+                        </ul>
+                        <div class="video-taller__datos">
+                            <div class="video-taller__dato">
+                                <strong>Desde 1997</strong>
+                                <span>de experiencia</span>
+                            </div>
+                            <div class="video-taller__dato">
+                                <strong>Taller propio</strong>
+                                <span>en San Salvador</span>
+                            </div>
+                            <div class="video-taller__dato">
+                                <strong>A tu medida</strong>
+                                <span>cada pieza</span>
+                            </div>
+                        </div>
+                        <a href="#contacto" class="btn-cotizar-submit">Solicita tu cotización</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Video del taller End -->
+
         <!-- Invitación al catálogo -->
         <section class="catalogo-cta" id="catalogo">
             <div class="container">
                 <div class="catalogo-cta__inner">
                     <div class="catalogo-cta__texto">
                         <h3>Conoce nuestro catálogo</h3>
-                        <p>Plywood, madera de pino y conacaste, puertas y más.</p>
+                        <p>Plywood de pino y okume, madera de pino, cedro y conacaste, puertas y más.</p>
                     </div>
                     <a href="productos.html" class="btn-cotizar-submit">Ver productos →</a>
                 </div>
@@ -810,6 +861,50 @@
                 if (productoURL) {
                     cotizarProducto(productoURL);
                 }
+            })();
+        </script>
+
+        <script>
+            // Video "Conoce nuestro taller": se reproduce solo cuando la sección está en pantalla
+            // y se pausa al salir, para no gastar datos ni batería si nadie lo ve.
+            (function () {
+                var video = document.querySelector('.video-taller__marco video');
+                if (!video) return;
+
+                if (!('IntersectionObserver' in window)) return; // navegadores viejos: se queda con autoplay normal
+
+                var observer = new IntersectionObserver(function (entradas) {
+                    entradas.forEach(function (entrada) {
+                        if (entrada.isIntersecting) {
+                            var promesa = video.play();
+                            if (promesa && promesa.catch) promesa.catch(function () {});
+                        } else {
+                            video.pause();
+                        }
+                    });
+                }, { threshold: 0.25 });
+
+                observer.observe(video);
+            })();
+
+            // Texto de "Conoce nuestro taller": aparece con un fade-up suave al entrar en pantalla
+            (function () {
+                var seccion = document.getElementById('video-taller');
+                if (!seccion || !('IntersectionObserver' in window)) return;
+
+                seccion.classList.add('js-anim');
+                var bloques = seccion.querySelectorAll('.video-taller__anim');
+
+                var observerTexto = new IntersectionObserver(function (entradas, obs) {
+                    entradas.forEach(function (entrada) {
+                        if (entrada.isIntersecting) {
+                            entrada.target.classList.add('visible');
+                            obs.unobserve(entrada.target);
+                        }
+                    });
+                }, { threshold: 0.15 });
+
+                bloques.forEach(function (bloque) { observerTexto.observe(bloque); });
             })();
         </script>
 </body>
