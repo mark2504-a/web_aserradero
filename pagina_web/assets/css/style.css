@@ -2137,6 +2137,43 @@ hr {
 	.main-header .logo .big-logo   { display: none }
 }
 
+/* ---- Logo del header: mismo tamaño en todas las páginas, también con el header fijo ---- */
+.main-header .logo {
+	padding: 8px 0;
+}
+
+.main-header .logo a {
+	display: inline-block;
+}
+
+.main-header .logo img {
+	display: block;
+	height: 140px;
+	width: auto;
+	object-fit: contain;
+	filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
+}
+
+@media (max-width: 991px) {
+	.main-header .logo img {
+		height: 105px;
+	}
+	/* Hamburguesa centrada verticalmente con el logo de 105px */
+	.header-area .mobile_menu .slicknav_btn { top: -80px }
+}
+
+@media (max-width: 575px) {
+	.main-header .logo {
+		padding: 6px 0;
+	}
+	.main-header .logo img {
+		height: 80px;
+	}
+	.header-area .mobile_menu .slicknav_btn { top: -60px }
+	/* El header es más alto: el texto del hero baja para no quedar debajo del logo */
+	.slider-area .single-slider .hero__caption { padding-top: 110px }
+}
+
 .main-header ul>li:hover>ul.submenu {
 	visibility: visible;
 	opacity: 1;
