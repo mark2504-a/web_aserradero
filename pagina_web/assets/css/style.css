@@ -3568,138 +3568,261 @@ hr {
 
 /* ---- Footer ---- */
 .footer {
-	color: var(--default-color);
-	background-color: var(--background-color);
-	background: url("../img/gallery/seccion_footer_taller.jpeg") center center no-repeat;
-	background-size: cover;
-	font-size: 17px;
 	position: relative;
+	overflow-x: clip; /* el resplandor del logo no genera scroll lateral */
+	/* Mismo fondo que "Nuestros Valores": foto del bosque con el overlay de marca encima */
+	background-color: #231B10;
+	background-image:
+		linear-gradient(rgba(35, 27, 16, 0.88), rgba(42, 32, 20, 0.92)),
+		url("../img/background/hero-bosque.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	border-top: 1px solid rgba(217, 164, 41, 0.35);
+	color: rgba(255, 255, 255, 0.75);
+	font-size: 15px;
+	line-height: 1.6;
 }
 
-.footer .container { position: relative; }
-
-.footer:before {
-	content: "";
-	background: rgba(14, 30, 23, 0.88);
-	position: absolute;
-	inset: 0;
-}
-
-.footer .footer-top { padding-top: 50px; }
-
-.footer .footer-about .logo {
-	line-height: 1;
-	margin-bottom: 25px;
-	text-decoration: none;
-}
-
-.footer .footer-about .logo img {
-	max-height: 40px;
-	margin-right: 6px;
-}
-
-/* Logo grande en el footer (arriba de la información de contacto) */
-.footer .footer-about .footer-logo {
-	display: inline-block;
-	margin-bottom: 16px;
-}
-
-.footer .footer-about .footer-logo img {
-	display: block;
-	height: 200px;
-	width: auto;
-	object-fit: contain;
-	filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
-}
-
-@media (max-width: 575px) {
-	.footer .footer-about .footer-logo img {
-		height: 150px;
+/* En celulares/tablets el fondo fijo falla (iOS) o va a saltos: scroll normal (igual que Valores) */
+@media (max-width: 991px), (hover: none) {
+	.footer {
+		background-attachment: scroll;
 	}
 }
 
-.footer .footer-about .logo span {
-	color: #D9A429;
-	font-size: 20px;
-	font-weight: 400;
-	letter-spacing: 1px;
+.footer__grid {
+	display: grid;
+	grid-template-columns: 30fr 17fr 18fr 35fr; /* 30% / 17% / 18% / 35% del ancho libre */
+	gap: 48px;
+	align-items: start;
+	padding: 50px 0 70px;
 }
 
-.footer .footer-contact i { font-size: 20px; }
+/* Títulos de columna */
+.footer__titulo {
+	position: relative;
+	color: #D9A429;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 2.5px;
+	text-transform: uppercase;
+	margin: 0 0 22px 0;
+	padding-bottom: 12px;
+}
 
-.footer .footer-about p { font-size: 16px; color: rgba(255,255,255,0.85); }
+.footer__titulo::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 36px;
+	height: 2px;
+	background: #D9A429;
+}
 
-.footer .footer-links p { color: rgba(255,255,255,0.85); }
+/* Enlaces y textos */
+.footer a {
+	color: rgba(255, 255, 255, 0.75);
+	text-decoration: none;
+	transition: color .25s ease;
+}
 
-.footer .social-links a {
+.footer a:hover {
+	color: #D9A429;
+}
+
+/* 1. Marca */
+/* Logo del footer: arriba y alineado a la izquierda, con resplandor dorado detrás */
+.footer .footer-logo {
+	position: relative;
+	isolation: isolate;
+	display: block;
+	width: fit-content;
+	margin: 0 0 20px;
+}
+
+.footer .footer-logo::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	left: 50%;
+	top: 50%;
+	width: 200%;
+	height: 200%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	background: radial-gradient(circle, rgba(217, 164, 41, 0.18) 0%, rgba(217, 164, 41, 0) 70%);
+	pointer-events: none;
+}
+
+.footer .footer-logo img {
+	display: block;
+	height: 200px;
+	width: auto;
+	max-width: 100%;
+	object-fit: contain;
+	image-rendering: auto;
+	filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.55));
+}
+
+.footer__texto {
+	color: rgba(255, 255, 255, 0.75);
+	font-size: 15px;
+	margin: 0 0 22px 0;
+	max-width: 320px;
+}
+
+.footer__redes {
+	display: flex;
+	gap: 10px;
+}
+
+.footer__redes a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	width: 40px;
 	height: 40px;
-	font-size: 20px;
-	color: rgba(255,255,255,0.8);
-	margin-right: 10px;
-	transition: transform 0.3s ease, color 0.3s ease;
-	text-decoration: none;
-}
-
-.footer .social-links a:hover {
-	color: #D9A429;
-	transform: scale(1.2) rotate(10deg);
-}
-
-.footer h4 {
+	border-radius: 50%;
+	border: 1px solid rgba(217, 164, 41, 0.35);
 	color: #D9A429;
 	font-size: 18px;
-	position: relative;
-	padding-bottom: 12px;
+	transition: background .25s ease, color .25s ease;
 }
 
-.footer .footer-links { margin-bottom: 30px; }
+.footer__redes a:hover {
+	background: #D9A429;
+	color: #1A140C;
+}
 
-.footer .footer-links ul {
+/* 2 y 3. Listas de enlaces */
+.footer__lista {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 }
 
-.footer .footer-links ul i {
-	padding-right: 2px;
-	font-size: 16px;
-	line-height: 0;
+.footer__lista li {
+	margin-bottom: 12px;
 }
 
-.footer .footer-links ul li {
-	padding: 10px 0;
+/* 4. Contacto */
+.footer__datos {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 26px 0;
+}
+
+.footer__datos li {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
+	gap: 12px;
+	margin-bottom: 14px;
 }
 
-.footer .footer-links ul li:first-child { padding-top: 0; }
-
-.footer .footer-links ul a {
-	color: rgba(255,255,255,0.7);
-	display: inline-block;
-	line-height: 1;
+.footer__datos i {
+	flex-shrink: 0;
+	width: 18px;
+	margin-top: 4px;
+	color: #D9A429;
+	font-size: 16px;
+	text-align: center;
 }
 
-.footer .footer-links ul a:hover {
-	color: #D9A429 !important;
+.footer__datos strong {
+	color: rgba(255, 255, 255, 0.9);
+	font-weight: 600;
 }
 
-.footer .footer-contact p { margin-bottom: 5px; }
-
-.footer .copyright {
-	padding-top: 28px;
-	border-top: 1px solid rgba(255,255,255,0.1);
+/* Cada número de teléfono baja de línea completo, nunca partido */
+.footer__datos a {
+	white-space: nowrap;
 }
 
-.footer .copyright p { margin-bottom: 0; color: rgba(255,255,255,0.85); }
+.footer__datos li span {
+	min-width: 0;
+	overflow-wrap: anywhere;
+}
 
-.footer .credits {
-	margin-top: 8px;
-	font-size: 15px;
+/* Teléfonos: uno debajo del otro, alineados con el texto (no con el ícono) */
+.footer__telefonos a {
+	display: block;
+	white-space: nowrap;
+}
+
+.footer .footer__btn,
+.footer .footer__btn:hover {
+	color: #231B10;
+	white-space: nowrap;
+}
+
+.footer__btn {
+	font-size: 16px;
+	padding: 12px 28px;
+}
+
+/* Barra inferior */
+.footer__barra {
+	border-top: 1px solid rgba(217, 164, 41, 0.25);
+	padding: 20px 0;
+	text-align: center;
+}
+
+.footer__barra p {
+	margin: 0;
+	color: rgba(255, 255, 255, 0.55);
+	font-size: 13px;
+}
+
+/* Tablet: 2 columnas */
+@media (max-width: 991px) {
+	.footer__grid {
+		grid-template-columns: 1fr 1fr;
+		gap: 40px;
+		padding: 50px 0 60px;
+	}
+	.footer .footer-logo img {
+		height: 200px;
+	}
+}
+
+/* Celular: una columna centrada */
+@media (max-width: 575px) {
+	.footer__grid {
+		grid-template-columns: 1fr;
+		gap: 44px;
+		padding: 50px 0 60px;
+		text-align: center;
+	}
+	.footer .footer-logo {
+		margin: 0 auto 20px;
+	}
+	.footer .footer-logo img {
+		height: 170px;
+	}
+	.footer__texto {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.footer__redes {
+		justify-content: center;
+	}
+	.footer__titulo::after {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.footer__datos li {
+		flex-direction: column;
+		align-items: center;
+		gap: 6px;
+		text-align: center;
+		margin-bottom: 18px;
+	}
+	.footer__datos i {
+		margin-top: 0;
+	}
 }
 
 /* ---- Contact form message ---- */
