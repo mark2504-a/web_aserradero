@@ -3594,7 +3594,7 @@ hr {
 
 .footer__grid {
 	display: grid;
-	grid-template-columns: 30fr 17fr 18fr 35fr; /* 30% / 17% / 18% / 35% del ancho libre */
+	grid-template-columns: 28fr 15fr 15fr 12fr 30fr; /* Marca 28% / Navegación 15% / Servicios 15% / Productos 12% / Contacto 30% */
 	gap: 48px;
 	align-items: start;
 	padding: 50px 0 70px;
